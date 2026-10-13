@@ -67,41 +67,41 @@ img { max-width: 100%; display: block; }
 .hero { max-width: var(--max); margin: 0 auto; padding: clamp(48px, 10vw, 120px) var(--gutter) 64px; }
 .name {
   font-family: var(--display);
-  font-size: clamp(32px, 9.6vw, 124px); line-height: 0.92; letter-spacing: -0.01em;
+  font-size: clamp(34px, 10vw, 128px); line-height: 0.95; letter-spacing: -0.015em;
   margin: 0 0 32px; white-space: nowrap;
 }
 .name .line { display: block; }
 .name .ch {
   display: inline-block;
-  font-weight: var(--w, 800); font-stretch: var(--s, 75%);
-  transition: font-weight 0.6s cubic-bezier(.2,.7,.2,1), font-stretch 0.6s cubic-bezier(.2,.7,.2,1), color 0.6s;
-  transition-delay: calc(var(--i, 0) * 28ms);
+  font-weight: var(--w, 600); font-stretch: var(--s, 84%);
+  transition: font-weight 0.9s cubic-bezier(.2,.7,.2,1), font-stretch 0.9s cubic-bezier(.2,.7,.2,1);
+  transition-delay: calc(var(--i, 0) * 22ms);
 }
-.name.tinted .ch:nth-child(odd) { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .name .ch { transition: none; } }
-.hero-lead { max-width: 34em; font-size: clamp(18px, 2vw, 22px); margin: 0 0 48px; color: var(--ink); }
+.hero-lead { max-width: 34em; font-size: clamp(18px, 2vw, 22px); margin: 0 0 40px; color: var(--ink); }
 
-.bands { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); height: clamp(120px, 22vw, 240px); }
+.bands { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; height: 44px; max-width: 560px; }
 .bands button {
   background: var(--c); border: 0; padding: 0; cursor: pointer;
-  transition: flex 0.2s, transform 0.25s ease;
+  transition: transform 0.25s ease;
   transform-origin: bottom;
 }
-.bands button:hover, .bands button[aria-pressed="true"] { transform: scaleY(1.08); }
-.bands button[aria-pressed="true"] { box-shadow: inset 0 -6px 0 var(--ink); }
+.bands button { border-radius: 2px; }
+.bands button:hover { transform: translateY(-3px); }
+.bands button[aria-pressed="true"] { transform: translateY(-3px); box-shadow: 0 6px 0 -3px var(--ink); }
 @media (prefers-reduced-motion: reduce) { .bands button { transition: none; } }
 
-.readout { margin: 20px 0 0; min-height: 3.2em; max-width: 46em; color: var(--grey); }
+.readout { font-size: 15px; margin: 16px 0 0; min-height: 3.2em; max-width: 46em; color: var(--grey); }
 .readout-hex { font-family: var(--display); font-weight: 700; color: var(--accent); margin-right: 8px; }
 
 /* Sections */
 .section { max-width: var(--max); margin: 0 auto; padding: 72px var(--gutter); border-top: 1px solid var(--rule); }
 .section h2 {
-  font-family: var(--display); font-weight: 800; font-stretch: 120%;
+  font-family: var(--display); font-weight: 560; font-stretch: 100%;
   font-size: clamp(36px, 5vw, 56px); line-height: 1; letter-spacing: -0.03em;
   margin: 0 0 40px;
 }
-h3 { font-family: var(--display); font-weight: 700; font-stretch: 90%; font-size: 26px; line-height: 1.15; letter-spacing: -0.01em; margin: 16px 0 4px; }
+h3 { font-family: var(--display); font-weight: 600; font-stretch: 92%; font-size: 26px; line-height: 1.15; letter-spacing: -0.01em; margin: 16px 0 4px; }
 .sub { margin: 64px 0 20px; }
 .meta { color: var(--grey); margin: 0 0 12px; font-size: 15px; }
 .tags { color: var(--grey); font-size: 15px; }
@@ -111,18 +111,18 @@ h3 { font-family: var(--display); font-weight: 700; font-stretch: 90%; font-size
 .links a { font-weight: 500; }
 
 /* Placeholder figure: shows the colour block until the image file exists */
-.ph { position: relative; margin: 0; background: var(--c); aspect-ratio: 4 / 3; overflow: hidden; }
+.ph { position: relative; margin: 0; background: color-mix(in srgb, var(--c) 14%, var(--paper)); aspect-ratio: 4 / 3; overflow: hidden; }
 .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .ph figcaption {
   position: absolute; left: 12px; bottom: 10px;
-  font-size: 13px; color: #fff; background: rgba(0,0,0,0.45); padding: 2px 8px;
+  font-size: 13px; color: var(--grey); padding: 2px 0;
 }
 .ph img + figcaption { display: none; }
 
 /* CHROMA feature */
 .feature { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
 .feature .ph { aspect-ratio: 16 / 11; }
-.feature h3 { font-size: clamp(40px, 5vw, 64px); font-weight: 900; font-stretch: 150%; letter-spacing: -0.01em; margin-top: 0; }
+.feature h3 { font-size: clamp(40px, 5vw, 64px); font-weight: 650; font-stretch: 112%; letter-spacing: 0.01em; margin-top: 0; }
 .feature-text p { max-width: 36em; }
 
 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 4vw, 48px); margin-top: 72px; }
@@ -130,7 +130,7 @@ h3 { font-family: var(--display); font-weight: 700; font-stretch: 90%; font-size
 
 .posters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .poster { aspect-ratio: 3 / 4; }
-.poster-cap { position: absolute; left: 12px; top: 10px; margin: 0; font-family: var(--display); font-weight: 700; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+.poster-cap { position: absolute; left: 12px; top: 10px; margin: 0; font-family: var(--display); font-weight: 600; color: var(--ink); }
 .poster img ~ .poster-cap { display: none; }
 
 .photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
@@ -147,7 +147,7 @@ h3 { font-family: var(--display); font-weight: 700; font-stretch: 90%; font-size
 /* Contact */
 .contact-lead { font-size: 20px; max-width: 30em; margin: -16px 0 24px; }
 .contact-mail {
-  font-family: var(--display); font-weight: 700;
+  font-family: var(--display); font-weight: 500;
   font-size: clamp(24px, 5vw, 56px); letter-spacing: -0.02em; word-break: break-word;
 }
 

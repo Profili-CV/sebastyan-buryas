@@ -40,13 +40,13 @@
 
   // Each colour gives the name a different shape: width and weight of the variable font
   var shapes = {
-    '#C8352E': { s: 138, w: 860 },
-    '#E07A1F': { s: 124, w: 700 },
-    '#E5B92B': { s: 115, w: 500 },
-    '#3E9A5B': { s: 100, w: 400 },
-    '#2B8FB8': { s: 85, w: 250 },
-    '#2E5BBA': { s: 75, w: 800 },
-    '#7046A8': { s: 52, w: 900 }
+    '#C8352E': { s: 125, w: 760 },
+    '#E07A1F': { s: 115, w: 640 },
+    '#E5B92B': { s: 106, w: 520 },
+    '#3E9A5B': { s: 100, w: 440 },
+    '#2B8FB8': { s: 92, w: 360 },
+    '#2E5BBA': { s: 84, w: 600 },
+    '#7046A8': { s: 76, w: 700 }
   };
 
   var nameEl = document.getElementById('name');
@@ -76,23 +76,6 @@
     letters.forEach(function (l) {
       l.style.removeProperty('--s');
       l.style.removeProperty('--w');
-    });
-    nameEl.classList.add('tinted');
-  }
-
-  // Small extra: on a pointer device the letters swell under the cursor
-  if (nameEl && window.matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
-    nameEl.addEventListener('pointermove', function (e) {
-      letters.forEach(function (l) {
-        var r = l.getBoundingClientRect();
-        var d = Math.abs(e.clientX - (r.left + r.width / 2)) + Math.abs(e.clientY - (r.top + r.height / 2)) * 0.6;
-        var f = Math.max(0, 1 - d / 220);
-        if (f > 0) l.style.setProperty('--w', Math.round(300 + 600 * f));
-        else l.style.removeProperty('--w');
-      });
-    });
-    nameEl.addEventListener('pointerleave', function () {
-      letters.forEach(function (l) { l.style.removeProperty('--w'); });
     });
   }
 
