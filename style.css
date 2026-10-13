@@ -269,3 +269,28 @@ html.lenis, html.lenis body { height: auto; }
 .marquee-seb { padding: 9px 0; }
 .marquee-seb .marquee-track > span { font-size: clamp(14px, 1.6vw, 20px); gap: 16px; padding-right: 16px; }
 .marquee-seb b { letter-spacing: 0.04em; }
+
+/* Nav: the section you are reading lights up */
+.nav nav a { position: relative; padding: 4px 0; transition: color .25s ease; }
+.nav nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+.nav nav a.is-active, .nav nav a[aria-current="page"] { color: var(--accent); }
+.nav nav a.is-active::after, .nav nav a[aria-current="page"]::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) { .nav nav a, .nav nav a::after { transition: none; } }
+
+/* Sixth photo: blurred, leads to the full gallery */
+.photos .more { display: grid; place-items: center; text-decoration: none; color: #fff; background: color-mix(in srgb, var(--c) 55%, #141418); }
+.photos .more img { filter: blur(14px) brightness(.7); transform: scale(1.2); transition: filter .4s ease, transform .6s ease; }
+.photos .more:hover img, .photos .more:focus-visible img { filter: blur(8px) brightness(.6); transform: scale(1.25); }
+.more-btn { position: relative; z-index: 1; display: inline-flex; gap: 8px; align-items: center; padding: 12px 20px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.7); backdrop-filter: blur(4px); font-weight: 600; font-size: 15px; text-align: center; transition: background .3s ease, color .3s ease; }
+.photos .more:hover .more-btn, .photos .more:focus-visible .more-btn { background: #fff; color: #141418; }
+.photos .more:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 760px) { .more-btn { padding: 10px 14px; font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { .photos .more img, .more-btn { transition: none; } }
+
+/* Full photo page */
+.album { columns: 3 260px; column-gap: 10px; }
+.album .ph { break-inside: avoid; margin-bottom: 10px; aspect-ratio: auto; }
+.album .ph img { position: static; width: 100%; height: auto; display: block; }
+.album .ph:not(:has(img)) { aspect-ratio: 4 / 5; }
+.back { display: inline-flex; gap: 8px; margin-bottom: 24px; font-weight: 500; }
+@media (max-width: 600px) { .album { columns: 2; column-gap: 8px; } .album .ph { margin-bottom: 8px; } }

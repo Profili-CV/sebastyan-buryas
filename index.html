@@ -15,7 +15,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/anybody.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 <a class="skip" href="#progetti" data-en="Skip to projects">Vai ai progetti</a>
@@ -130,7 +130,10 @@
       <figure class="ph" style="--c:#3E9A5B"><img src="img/foto-3.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-3.jpg</figcaption></figure>
       <figure class="ph" style="--c:#E5B92B"><img src="img/foto-4.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-4.jpg</figcaption></figure>
       <figure class="ph" style="--c:#C8352E"><img src="img/foto-5.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-5.jpg</figcaption></figure>
-      <figure class="ph" style="--c:#7046A8"><img src="img/foto-6.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-6.jpg</figcaption></figure>
+      <a class="ph more" href="foto.html" style="--c:#7046A8">
+        <img src="img/foto-6.jpg" alt="" onerror="this.remove()">
+        <span class="more-btn"><span data-en="See all photos">Vedi tutte le foto</span> <span aria-hidden="true">→</span></span>
+      </a>
     </div>
     <p class="links"><a href="https://www.instagram.com/_seb01_photo/" data-en="More on Instagram">Altre foto su Instagram</a></p>
   </section>
@@ -178,8 +181,9 @@
 </footer>
 
 <script src="script.js?v=9"></script>
-<script src="lightbox.js?v=1" data-images=".ph img"></script>
+<script src="lightbox.js?v=1" data-images=".ph:not(.more) img"></script>
 <script src="lenis.min.js?v=1.1.13"></script>
 <script src="motion.js?v=1"></script>
+<script src="nav-active.js?v=1"></script>
 </body>
 </html>
