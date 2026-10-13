@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/anybody.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=16">
+<link rel="stylesheet" href="style.css?v=20">
 <script>try{if(!sessionStorage.getItem("pl-seen"))document.documentElement.classList.add("pl-on")}catch(e){document.documentElement.classList.add("pl-on")}</script>
 </head>
 <body>
@@ -31,14 +31,16 @@
 <a class="skip" href="#progetti" data-en="Skip to projects">Vai ai progetti</a>
 
 <header class="nav">
-  <a class="nav-name" href="#top"><span class="nav-logo" aria-hidden="true"></span>Sebastyan Buryas</a>
+  <a class="nav-name" href="#top">Sebastyan Buryas</a>
+  <a class="nav-mark" href="#top" aria-label="Torna all'inizio" data-en-label="Back to top"><span class="nav-logo" aria-hidden="true"></span></a>
   <nav aria-label="Sezioni">
     <a href="#progetti" data-en="Work">Progetti</a>
     <a href="#fotografia" data-en="Photography">Fotografia</a>
     <a href="#chi-sono" data-en="About">Chi sono</a>
+    <a href="#percorso" data-en="Path">Percorso</a>
     <a href="#contatti" data-en="Contact">Contatti</a>
   </nav>
-  <button class="lang" type="button" id="lang" aria-label="Switch to English">EN</button>
+  <button class="lang" type="button" id="lang" aria-label="Switch to English"><span class="lang-opt is-on">IT</span><span class="lang-opt">EN</span></button>
 </header>
 
 <main id="top">
@@ -50,19 +52,19 @@
 
     <div class="bands" id="bands" role="group" aria-label="Palette interattiva: scegli un colore" data-en-label="Interactive palette: pick a colour">
       <button type="button" style="--c:#C8352E" data-hex="#C8352E" aria-label="Rosso"></button>
-      <button type="button" style="--c:#E07A1F" data-hex="#E07A1F" aria-label="Arancione"></button>
+      <button type="button" style="--c:#E07A1F" data-hex="#E07A1F" aria-label="Arancione" aria-pressed="true"></button>
       <button type="button" style="--c:#E5B92B" data-hex="#E5B92B" aria-label="Giallo"></button>
       <button type="button" style="--c:#3E9A5B" data-hex="#3E9A5B" aria-label="Verde"></button>
       <button type="button" style="--c:#2B8FB8" data-hex="#2B8FB8" aria-label="Azzurro"></button>
-      <button type="button" style="--c:#2E5BBA" data-hex="#2E5BBA" aria-label="Blu" aria-pressed="true"></button>
+      <button type="button" style="--c:#2E5BBA" data-hex="#2E5BBA" aria-label="Blu"></button>
       <button type="button" style="--c:#7046A8" data-hex="#7046A8" aria-label="Viola"></button>
     </div>
-    <p class="readout" id="readout" aria-live="polite"><span class="readout-hex">#2E5BBA</span> <span class="readout-text">Scegli un colore: il mio nome cambia forma e provo a indovinare il tuo stato d'animo. Probabilmente sbaglierò.</span></p>
+    <p class="readout" id="readout" aria-live="polite"><span class="readout-hex">#E07A1F</span> <span class="readout-text">Scegli un colore: il mio nome cambia forma e provo a indovinare il tuo stato d'animo. Probabilmente sbaglierò.</span></p>
   </section>
   </div>
 
   <div class="marquee marquee-seb" aria-hidden="true">
-    <div class="marquee-track"><span><i class="dot" style="background:#C8352E"></i><b data-en="Media art">Media art</b><i class="dot" style="background:#E07A1F"></i><b data-en="Colour">Colore</b><i class="dot" style="background:#E5B92B"></i><b data-en="Interactive installations">Installazioni interattive</b><i class="dot" style="background:#3E9A5B"></i><b data-en="Web apps">Web app</b><i class="dot" style="background:#2B8FB8"></i><b data-en="Graphics">Grafica</b><i class="dot" style="background:#2E5BBA"></i><b data-en="Photography">Fotografia</b><i class="dot" style="background:#7046A8"></i><b data-en="Video">Video</b></span><span><i class="dot" style="background:#C8352E"></i><b data-en="Media art">Media art</b><i class="dot" style="background:#E07A1F"></i><b data-en="Colour">Colore</b><i class="dot" style="background:#E5B92B"></i><b data-en="Interactive installations">Installazioni interattive</b><i class="dot" style="background:#3E9A5B"></i><b data-en="Web apps">Web app</b><i class="dot" style="background:#2B8FB8"></i><b data-en="Graphics">Grafica</b><i class="dot" style="background:#2E5BBA"></i><b data-en="Photography">Fotografia</b><i class="dot" style="background:#7046A8"></i><b data-en="Video">Video</b></span></div>
+    <div class="marquee-track"><span><i class="dot" style="background:#C8352E"></i><b data-en="Media art">Media art</b><i class="dot" style="background:#E07A1F"></i><b data-en="Colour">Colore</b><i class="dot" style="background:#E5B92B"></i><b data-en="Interactive installations">Installazioni interattive</b><i class="dot" style="background:#3E9A5B"></i><b data-en="Websites and web apps">Siti e web app</b><i class="dot" style="background:#2B8FB8"></i><b data-en="Brand identity">Brand identity</b><i class="dot" style="background:#2E5BBA"></i><b data-en="Logos">Loghi</b><i class="dot" style="background:#7046A8"></i><b data-en="Packaging">Packaging</b><i class="dot" style="background:#C8352E"></i><b data-en="Graphic design">Grafica</b><i class="dot" style="background:#E07A1F"></i><b data-en="Photography">Fotografia</b><i class="dot" style="background:#E5B92B"></i><b data-en="Video editing">Video editing</b><i class="dot" style="background:#3E9A5B"></i><b data-en="Motion and 3D">Motion e 3D</b><i class="dot" style="background:#2B8FB8"></i><b data-en="Social media">Social media</b></span><span><i class="dot" style="background:#C8352E"></i><b data-en="Media art">Media art</b><i class="dot" style="background:#E07A1F"></i><b data-en="Colour">Colore</b><i class="dot" style="background:#E5B92B"></i><b data-en="Interactive installations">Installazioni interattive</b><i class="dot" style="background:#3E9A5B"></i><b data-en="Websites and web apps">Siti e web app</b><i class="dot" style="background:#2B8FB8"></i><b data-en="Brand identity">Brand identity</b><i class="dot" style="background:#2E5BBA"></i><b data-en="Logos">Loghi</b><i class="dot" style="background:#7046A8"></i><b data-en="Packaging">Packaging</b><i class="dot" style="background:#C8352E"></i><b data-en="Graphic design">Grafica</b><i class="dot" style="background:#E07A1F"></i><b data-en="Photography">Fotografia</b><i class="dot" style="background:#E5B92B"></i><b data-en="Video editing">Video editing</b><i class="dot" style="background:#3E9A5B"></i><b data-en="Motion and 3D">Motion e 3D</b><i class="dot" style="background:#2B8FB8"></i><b data-en="Social media">Social media</b></span></div>
   </div>
 
   <section id="progetti" class="section band band-dark">
@@ -137,7 +139,7 @@
 
   <section id="fotografia" class="section band band-light">
     <h2 data-en="Photography">Fotografia</h2>
-    <p class="intro" data-en="Night, cities and landscapes, shot on a Nikon D3500. In 2019 my photographs were shown in “Segni d'acqua nelle Valli di Lanzo”, with the Società Storica delle Valli di Lanzo.">Notturni, città e paesaggi, scattati con una Nikon D3500. Nel 2019 le mie foto sono state esposte nella mostra <em>Segni d'acqua nelle Valli di Lanzo</em>, con la Società Storica delle Valli di Lanzo.</p>
+    <p class="intro" data-en="Nature, cities and nights, shot on a Nikon D3500.">Natura, città e notturni, scattati con una Nikon D3500.</p>
     <div class="photos">
       <figure class="ph" style="--c:#17171C"><img src="img/foto/foto-01.jpg" data-full="img/foto/foto-01-full.jpg" alt="Funghi nel sottobosco" data-en-alt="Mushrooms on the forest floor" loading="lazy"></figure>
       <figure class="ph" style="--c:#2E5BBA"><img src="img/foto/foto-02.jpg" data-full="img/foto/foto-02-full.jpg" alt="Muro coperto di muschio lungo un sentiero" data-en-alt="Moss-covered wall along a path" loading="lazy"></figure>
@@ -157,36 +159,51 @@
     <div class="about-grid">
       <img class="portrait" src="img/ritratto.jpg" alt="Sebastyan Buryas" width="808" height="904">
       <div class="about-text">
-        <p class="scrub" data-en="I was born in Ukraine and grew up in Italy, near Turin. I studied graphic design and communication in high school, then Nuove Tecnologie dell'Arte at the Accademia Albertina, where I graduated with a bachelor's (109/110) and a master's degree (110/110).">Sono nato in Ucraina e cresciuto in Italia, vicino a Torino. Ho studiato grafica e comunicazione alle superiori, poi Nuove Tecnologie dell'Arte all'Accademia Albertina, dove ho preso la triennale (109/110) e la magistrale (110/110).</p>
-        <p data-en="I like projects where design and code meet: I draw the interface, write it, and put it online myself.">Mi piacciono i progetti dove grafica e codice si incontrano: disegno l'interfaccia, la scrivo e la metto online da solo.</p>
-
+        <p class="scrub" data-en="I'm a media artist: I design images, interfaces and installations, and I build them too, from the first sketch to the code.">Sono un media artist: progetto immagini, interfacce e installazioni, e le costruisco anche, dal primo schizzo al codice.</p>
+        <p data-en="I was born in Ukraine and grew up near Turin. After a diploma in Graphics and Communication at IIS Giulio Natta, I studied Nuove Tecnologie dell'Arte at the Accademia Albertina: bachelor's with 109/110, master's with 110/110 and a thesis on CHROMA.">Sono nato in Ucraina e cresciuto vicino a Torino. Dopo il diploma in Grafica e Comunicazione all'IIS Giulio Natta ho studiato Nuove Tecnologie dell'Arte all'Accademia Albertina: triennale con 109/110, magistrale con 110/110 e una tesi su CHROMA.</p>
+        <p data-en="What drives me is colour: how we read it, and how machines think they read it. Following it I learned to move from Photoshop to Blender, from Premiere to JavaScript, all the way to AI models running locally.">Quello che mi muove è il colore: come lo leggiamo noi e come credono di leggerlo le macchine. Seguendolo ho imparato a passare da Photoshop a Blender, da Premiere a JavaScript, fino ai modelli di AI in locale.</p>
         <dl class="facts">
           <dt data-en="Design">Grafica</dt>
-          <dd>Adobe Creative Cloud (Photoshop, Illustrator, InDesign, XD), Affinity, Figma</dd>
+          <dd>Adobe Creative Cloud, Affinity, Figma</dd>
           <dt data-en="Video, 3D, audio">Video, 3D, audio</dt>
           <dd>Premiere Pro, After Effects, DaVinci Resolve, Audition, Lightroom, Blender</dd>
           <dt data-en="Code">Sviluppo</dt>
           <dd>HTML, CSS, JavaScript, Flutter, TouchDesigner, WordPress, GitHub</dd>
-          <dt data-en="AI">AI</dt>
-          <dd data-en="Local models (Ollama), colour extraction with k-means, webcam input">Modelli in locale (Ollama), estrazione del colore con k-means, input da webcam</dd>
-          <dt data-en="Office">Ufficio</dt>
-          <dd>Microsoft Office, Google Workspace</dd>
           <dt data-en="Languages">Lingue</dt>
           <dd data-en="Ukrainian (native), Italian (C2), English (B2, First Certificate)">Ucraino (madrelingua), italiano (C2), inglese (B2, First Certificate)</dd>
         </dl>
+        <p class="cv-cta"><a class="btn-cv" href="cv.html"><span data-en="Read the full CV">Leggi il CV completo</span> <span aria-hidden="true">→</span></a></p>
       </div>
     </div>
   </section>
 
+  <section id="percorso" class="section path">
+    <h2 data-en="Path">Percorso</h2>
+    <ol class="path-list">
+      <li style="--c:#7046A8"><span class="path-years">2024–2026</span><span class="path-kind" data-en="Study">Studi</span><h3 data-en="Master's in Nuove Tecnologie dell'Arte – Media Art">Magistrale in Nuove Tecnologie dell'Arte – Media Art</h3><p class="path-where">Accademia Albertina, Torino</p><p data-en="110/110. Thesis: CHROMA, colour, hybrid media and research practices in media art.">110/110. Tesi: CHROMA, colore, hybrid media e pratiche di ricerca nella media art.</p></li>
+      <li style="--c:#2E5BBA"><span class="path-years">2022–2023</span><span class="path-kind" data-en="Work">Lavoro</span><h3 data-en="Graphic designer and communication">Grafico e comunicazione</h3><p class="path-where">Gold Music, Bruino (TO)</p><p data-en="Graphics for a musical instrument distributor, support on the new website, product photography, retouching and video editing.">Grafica per un distributore di strumenti musicali, supporto al nuovo sito, foto di prodotto, fotoritocco e montaggio video.</p></li>
+      <li style="--c:#2B8FB8"><span class="path-years">2021–2024</span><span class="path-kind" data-en="Study">Studi</span><h3 data-en="Bachelor's in Nuove Tecnologie dell'Arte">Triennale in Nuove Tecnologie dell'Arte</h3><p class="path-where">Accademia Albertina, Torino</p><p data-en="109/110. Thesis: colour psychology in cinema.">109/110. Tesi: la psicologia del colore nel cinema.</p></li>
+      <li style="--c:#3E9A5B"><span class="path-years">2021–2022</span><span class="path-kind" data-en="Work">Lavoro</span><h3 data-en="Waiter, delivery and kitchen help">Cameriere, fattorino e aiuto cucina</h3><p class="path-where">Tavernacolo, Orbassano (TO)</p></li>
+      <li style="--c:#E5B92B"><span class="path-years">2019</span><span class="path-kind" data-en="Exhibition">Mostra</span><h3 data-en="Photo exhibition “Segni d'acqua nelle Valli di Lanzo”">Mostra fotografica “Segni d'acqua nelle Valli di Lanzo”</h3><p class="path-where">Società Storica delle Valli di Lanzo</p></li>
+      <li style="--c:#E07A1F"><span class="path-years">2016–2021</span><span class="path-kind" data-en="Study">Studi</span><h3 data-en="Diploma in Graphics and Communication">Diploma in Grafica e Comunicazione</h3><p class="path-where">IIS Giulio Natta, Rivoli (TO)</p></li>
+    </ol>
+    <p class="path-more"><span data-en="Also:">Inoltre:</span> <span data-en="steward on the set of the film Fast X in Turin, call centre operator at Colligo S.p.A., co-founder of Porcodduo Studio.">steward sul set del film Fast X a Torino, operatore call center per Colligo S.p.A., co-fondatore di Porcodduo Studio.</span></p>
+  </section>
+
   <section id="contatti" class="section contact band band-accent">
     <h2 data-en="Contact">Contatti</h2>
-    <p class="contact-lead" data-en="Looking for someone for an installation, a website or a visual project? Write to me.">Cerchi qualcuno per un'installazione, un sito o un progetto visivo? Scrivimi.</p>
-    <a class="contact-mail" href="mailto:sebiburyas.sb12@gmail.com">sebiburyas.sb12@gmail.com</a>
-    <p class="links">
-      <a href="cv-sebastyan-buryas.pdf" download data-en="Download CV (PDF)">Scarica il CV (PDF)</a>
-      <a href="https://github.com/sebabreak">GitHub</a>
-      <a href="https://www.instagram.com/_seb01_photo/">Instagram</a>
-    </p>
+    <p class="contact-lead" data-en="An installation, a website, an identity or a video: if you have a project, let's talk.">Un'installazione, un sito, un'identità o un video: se hai un progetto, parliamone.</p>
+    <div class="contact-main">
+      <a class="contact-mail" href="mailto:sebiburyas.sb12@gmail.com">sebiburyas.sb12@gmail.com</a>
+      <button class="copy-mail" type="button" data-copy="sebiburyas.sb12@gmail.com" data-en="Copy">Copia</button>
+    </div>
+    <ul class="channels">
+      <li><a href="https://github.com/sebabreak" target="_blank" rel="noopener"><span class="ch-kind" data-en="Code">Codice</span><b>GitHub</b><span class="ch-arrow" aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.instagram.com/_seb01_photo/" target="_blank" rel="noopener"><span class="ch-kind" data-en="Photography">Fotografia</span><b>Instagram</b><span class="ch-arrow" aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.instagram.com/porcodduostudio/" target="_blank" rel="noopener"><span class="ch-kind">Studio</span><b>Porcodduo</b><span class="ch-arrow" aria-hidden="true">↗</span></a></li>
+      <li><a href="cv.html"><span class="ch-kind">Curriculum</span><b data-en="Online CV">CV online</b><span class="ch-arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="cv-sebastyan-buryas.pdf" download><span class="ch-kind">Curriculum</span><b data-en="PDF CV">CV in PDF</b><span class="ch-arrow" aria-hidden="true">↓</span></a></li>
+    </ul>
   </section>
 </main>
 
@@ -194,13 +211,13 @@
   <p>© 2026 Sebastyan Buryas</p>
 </footer>
 
-<script src="script.js?v=9"></script>
+<script src="script.js?v=11"></script>
 <script src="lightbox.js?v=1" data-images=".ph:not(.more) img, .thumbs img"></script>
 <script src="lenis.min.js?v=1.1.13"></script>
 <script src="motion.js?v=1"></script>
 <script src="nav-active.js?v=1"></script>
-<script src="media.js?v=1"></script>
+<script src="media.js?v=2"></script>
 <script src="preloader.js?v=1"></script>
-<script src="cursor.js?v=1" data-trail="#C8352E,#E07A1F,#E5B92B,#3E9A5B,#2B8FB8,#2E5BBA,#7046A8"></script>
+<script src="cursor.js?v=2"></script>
 </body>
 </html>

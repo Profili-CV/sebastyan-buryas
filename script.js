@@ -87,6 +87,7 @@
   var current = null;
 
   function showReading() {
+    if (!readText) return;
     if (current) {
       readHex.textContent = current;
       readText.textContent = readings[current][lang];
@@ -95,30 +96,38 @@
     }
   }
 
+  function applyColour(hex, btn) {
+    root.style.setProperty('--accent', hex);
+    var rgb = [1, 3, 5].map(function (i) { return parseInt(hex.substr(i, 2), 16) / 255; })
+      .map(function (c) { return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); });
+    var lum = 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+    root.style.setProperty('--on-accent', lum * 0.77 > 0.2 ? '#17171C' : '#FFFFFF');
+    var order = Object.keys(shapes);
+    var at = order.indexOf(hex);
+    var hero = document.querySelector('.hero');
+    if (hero && at > -1) {
+      hero.style.setProperty('--c1', hex);
+      hero.style.setProperty('--c2', order[(at + 1) % order.length]);
+      hero.style.setProperty('--c3', order[(at + order.length - 1) % order.length]);
+    }
+    shapeName(hex);
+    if (bands) bands.querySelectorAll('button').forEach(function (b) {
+      b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+    });
+    if (readHex) readHex.textContent = hex;
+  }
+
   if (bands) {
     bands.addEventListener('click', function (e) {
       var btn = e.target.closest('button');
       if (!btn) return;
       current = btn.getAttribute('data-hex');
-      root.style.setProperty('--accent', current);
-      var rgb = [1, 3, 5].map(function (i) { return parseInt(current.substr(i, 2), 16) / 255; })
-        .map(function (c) { return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); });
-      var lum = 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
-      root.style.setProperty('--on-accent', lum * 0.77 > 0.2 ? '#17171C' : '#FFFFFF');
-      var order = Object.keys(shapes);
-      var at = order.indexOf(current);
-      var hero = document.querySelector('.hero');
-      if (hero && at > -1) {
-        hero.style.setProperty('--c1', current);
-        hero.style.setProperty('--c2', order[(at + 1) % order.length]);
-        hero.style.setProperty('--c3', order[(at + order.length - 1) % order.length]);
-      }
-      shapeName(current);
-      bands.querySelectorAll('button').forEach(function (b) {
-        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-      });
+      applyColour(current, btn);
       showReading();
     });
+    // the site opens on orange
+    var start = bands.querySelector('[data-hex="#E07A1F"]');
+    if (start) applyColour('#E07A1F', start);
   }
 
   // Language switch: Italian is the page's own markup, English lives in data-en
@@ -144,7 +153,7 @@
     labelNodes.forEach(function (el) {
       el.setAttribute('aria-label', next === 'en' ? el.dataset.enLabel : el.dataset.itLabel);
     });
-    btnLang.textContent = next === 'en' ? 'IT' : 'EN';
+    btnLang.innerHTML = '<span class="lang-opt' + (next === 'it' ? ' is-on' : '') + '">IT</span><span class="lang-opt' + (next === 'en' ? ' is-on' : '') + '">EN</span>';
     btnLang.setAttribute('aria-label', next === 'en' ? 'Passa all\'italiano' : 'Switch to English');
     showReading();
     document.dispatchEvent(new Event('langchange'));
@@ -165,7 +174,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // 1. Reveal on scroll
-  var targets = document.querySelectorAll('.section h2, .feature, .pair .card, .sub, .posters figure, .photos figure, .about-grid > *, .contact-lead, .contact-mail');
+  var targets = document.querySelectorAll('.section h2, .feature, .pair .card, .sub, .posters figure, .photos figure, .about-grid > *, .contact-lead, .contact-main, .path-list li, .channels li');
   if (!reduce && 'IntersectionObserver' in window) {
     targets.forEach(function (el, i) {
       el.classList.add('reveal');
@@ -216,4 +225,17 @@
   window.addEventListener('resize', update);
   document.addEventListener('langchange', split);
   split();
+})();
+
+// Copy the e-mail address
+(function () {
+  var b = document.querySelector('[data-copy]');
+  if (!b || !navigator.clipboard) return;
+  b.addEventListener('click', function () {
+    var en = document.documentElement.lang === 'en';
+    navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function () {
+      b.textContent = en ? 'Copied ✓' : 'Copiato ✓';
+      setTimeout(function () { b.textContent = en ? 'Copy' : 'Copia'; }, 1800);
+    });
+  });
 })();
