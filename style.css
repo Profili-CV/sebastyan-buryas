@@ -315,3 +315,23 @@ html.lenis, html.lenis body { height: auto; }
   .pl-bars i, .pl-name, .pl-sub { animation: none; opacity: 1; transform: none; }
   .pl-on .preloader { transition: opacity .3s ease; } .pl-done .preloader { clip-path: none; opacity: 0; }
 }
+
+/* Custom cursor (mouse only) */
+.has-cursor, .has-cursor a, .has-cursor button, .has-cursor [role="button"], .has-cursor .zoomable { cursor: none; }
+.has-cursor dialog, .has-cursor dialog * { cursor: auto; }
+.has-cursor dialog button { cursor: pointer; }
+.cur-dot, .cur-ring, .cur-trail { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 99; }
+.cur-trail { width: 100vw; height: 100vh; }
+.cur-dot, .cur-ring { opacity: 0; transition: opacity .25s ease; }
+.cur-on .cur-dot, .cur-on .cur-ring { opacity: 1; }
+.cur-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--accent); }
+.cur-ring { width: 36px; height: 36px; margin: -18px 0 0 -18px; display: grid; place-items: center; }
+.cur-ring::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--accent); transition: transform .35s cubic-bezier(.2,.8,.2,1), background .25s ease, border-color .25s ease; }
+.cur-ring.is-hot::before { transform: scale(1.7); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.cur-ring.has-label::before { transform: scale(3); background: var(--accent); border-color: var(--accent); }
+.cur-label { position: absolute; left: 50%; top: 50%; z-index: 1; font: 600 12px/1.15 var(--body); color: var(--on-accent, #fff); text-align: center; white-space: nowrap; opacity: 0; transform: translate(-50%, -50%) scale(.6); transition: opacity .2s ease, transform .3s cubic-bezier(.2,.8,.2,1); }
+.cur-ring.has-label .cur-label { opacity: 1; transform: translate(-50%, -50%); }
+.cur-ring.has-label + .cur-dot, .cur-ring.has-label ~ .cur-dot { opacity: 0; }
+.cur-down .cur-ring::before { transform: scale(.8); }
+.cur-down .cur-ring.has-label::before { transform: scale(2.7); }
+.cs-momento .cur-label { color: #0A0A0A; }
