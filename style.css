@@ -246,3 +246,23 @@ img.zoomable:focus-visible { outline: 3px solid var(--accent); outline-offset: 3
 .lightbox.single .lb-prev, .lightbox.single .lb-next { display: none; }
 .lb-count { position: absolute; bottom: 14px; left: 0; right: 0; margin: 0; text-align: center; color: rgba(255,255,255,0.75); font-size: 14px; }
 @media (max-width: 600px) { .lb-prev, .lb-next { top: auto; bottom: 10px; transform: none; } }
+
+/* Smooth scrolling (Lenis) */
+html.lenis.lenis-smooth, .lenis.lenis-smooth { scroll-behavior: auto !important; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Headings that rise letter by letter */
+.rise { display: inline-flex; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.rise .ch { display: inline-block; transform: translateY(110%); transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.risen .rise .ch { transform: none; }
+.motion-off .rise .ch { transform: none; transition: none; }
+
+/* Moving text band */
+.marquee { overflow: hidden; white-space: nowrap; padding: 18px 0; user-select: none; }
+.marquee-track { display: inline-flex; will-change: transform; }
+.marquee-track > span { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font-family: var(--display); font-size: clamp(26px, 4vw, 52px); line-height: 1; }
+.marquee .dot { width: .38em; height: .38em; border-radius: 50%; display: inline-block; flex: none; }
+.motion-off .marquee-track { transform: none !important; }
+.marquee-seb { background: #141418; color: #EDEDEA; border-block: 1px solid #2C2C33; }
+.marquee-seb b { font-weight: 700; font-stretch: 120%; text-transform: uppercase; letter-spacing: -0.01em; }
