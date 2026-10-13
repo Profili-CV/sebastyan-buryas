@@ -15,9 +15,17 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/anybody.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
+<script>try{if(!sessionStorage.getItem("pl-seen"))document.documentElement.classList.add("pl-on")}catch(e){document.documentElement.classList.add("pl-on")}</script>
 </head>
 <body>
+<div class="preloader" aria-hidden="true">
+  <div class="pl-inner">
+    <div class="pl-bars"><i style="--c:#C8352E"></i><i style="--c:#E07A1F"></i><i style="--c:#E5B92B"></i><i style="--c:#3E9A5B"></i><i style="--c:#2B8FB8"></i><i style="--c:#2E5BBA"></i><i style="--c:#7046A8"></i></div>
+    <p class="pl-name">Sebastyan Buryas</p>
+    <p class="pl-sub">Media art · Torino</p>
+  </div>
+</div>
 <a class="skip" href="#fotografia" data-en="Skip to photos">Vai alle foto</a>
 
 <header class="nav">
@@ -62,5 +70,6 @@
 <script src="lightbox.js?v=1" data-images=".album img"></script>
 <script src="lenis.min.js?v=1.1.13"></script>
 <script src="motion.js?v=1"></script>
+<script src="preloader.js?v=1"></script>
 </body>
 </html>
