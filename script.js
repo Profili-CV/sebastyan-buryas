@@ -99,6 +99,14 @@
       if (!btn) return;
       current = btn.getAttribute('data-hex');
       root.style.setProperty('--accent', current);
+      var order = Object.keys(shapes);
+      var at = order.indexOf(current);
+      var hero = document.querySelector('.hero');
+      if (hero && at > -1) {
+        hero.style.setProperty('--c1', current);
+        hero.style.setProperty('--c2', order[(at + 1) % order.length]);
+        hero.style.setProperty('--c3', order[(at + order.length - 1) % order.length]);
+      }
       shapeName(current);
       bands.querySelectorAll('button').forEach(function (b) {
         b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
