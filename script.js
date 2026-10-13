@@ -1,4 +1,6 @@
 (function () {
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
   var lang = 'it';
   var root = document.documentElement;
 
@@ -145,6 +147,7 @@
     btnLang.textContent = next === 'en' ? 'IT' : 'EN';
     btnLang.setAttribute('aria-label', next === 'en' ? 'Passa all\'italiano' : 'Switch to English');
     showReading();
+    document.dispatchEvent(new Event('langchange'));
     try { localStorage.setItem('lang', next); } catch (e) {}
   }
 
@@ -153,4 +156,64 @@
   var saved = null;
   try { saved = localStorage.getItem('lang'); } catch (e) {}
   if (saved === 'en') setLang('en');
+})();
+
+
+// Scroll effects: sections appear as you reach them, and the "about" statement
+// fills in word by word while you scroll past it.
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. Reveal on scroll
+  var targets = document.querySelectorAll('.section h2, .feature, .pair .card, .sub, .posters figure, .photos figure, .about-grid > *, .contact-lead, .contact-mail');
+  if (!reduce && 'IntersectionObserver' in window) {
+    targets.forEach(function (el, i) {
+      el.classList.add('reveal');
+      var sib = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.style.transitionDelay = Math.min(sib, 5) * 70 + 'ms';
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+  }
+
+  // 2. Word-by-word colour fill
+  var words = [];
+  var scrub = document.querySelector('.scrub');
+  function split() {
+    if (!scrub) return;
+    var text = scrub.textContent.trim();
+    scrub.textContent = '';
+    words = text.split(/\s+/).map(function (w, i, all) {
+      var s = document.createElement('span');
+      s.className = 'w';
+      s.textContent = w + (i < all.length - 1 ? ' ' : '');
+      scrub.appendChild(s);
+      return s;
+    });
+    update();
+  }
+  function update() {
+    if (!scrub || !words.length) return;
+    if (reduce) { words.forEach(function (w) { w.classList.add('lit'); }); return; }
+    var r = scrub.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var start = vh * 0.85, end = vh * 0.35;
+    var p = (start - r.top) / (start - end + r.height * 0.6);
+    p = Math.max(0, Math.min(1, p));
+    var n = Math.round(p * words.length);
+    words.forEach(function (w, i) { w.classList.toggle('lit', i < n); });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { update(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  document.addEventListener('langchange', split);
+  split();
 })();

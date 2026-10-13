@@ -211,3 +211,17 @@ h3 { font-family: var(--display); font-weight: 600; font-stretch: 92%; font-size
 @media (prefers-color-scheme: dark) {
   .band-light { --band-bg: #F1F0EC; --paper: #F1F0EC; --ink: #17171C; --grey: #5C5C66; --rule: #E2E1DC; }
 }
+
+/* Scroll reveal */
+html.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+html.js .reveal.in { opacity: 1; transform: none; }
+
+/* "About" statement that fills in as you scroll */
+.scrub {
+  font-family: var(--display); font-weight: 500; font-stretch: 96%;
+  font-size: clamp(22px, 2.6vw, 34px); line-height: 1.28; letter-spacing: -0.005em;
+  max-width: 26em; margin: 0 0 28px;
+}
+.scrub .w { color: color-mix(in srgb, var(--ink) 22%, var(--band-bg, var(--paper))); transition: color .35s ease; }
+.scrub .w.lit { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .scrub .w { transition: none; } }
