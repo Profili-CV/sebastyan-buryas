@@ -99,6 +99,10 @@
       if (!btn) return;
       current = btn.getAttribute('data-hex');
       root.style.setProperty('--accent', current);
+      var rgb = [1, 3, 5].map(function (i) { return parseInt(current.substr(i, 2), 16) / 255; })
+        .map(function (c) { return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); });
+      var lum = 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+      root.style.setProperty('--on-accent', lum * 0.77 > 0.2 ? '#17171C' : '#FFFFFF');
       var order = Object.keys(shapes);
       var at = order.indexOf(current);
       var hero = document.querySelector('.hero');
