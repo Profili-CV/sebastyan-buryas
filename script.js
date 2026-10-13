@@ -34,9 +34,67 @@
   };
 
   var intro = {
-    it: "Scegli un colore: provo a indovinare il tuo stato d'animo. Probabilmente sbaglierò.",
-    en: 'Pick a colour: I will try to guess your mood. I will probably be wrong.'
+    it: "Scegli un colore: il mio nome cambia forma e provo a indovinare il tuo stato d'animo. Probabilmente sbaglierò.",
+    en: 'Pick a colour: my name changes shape and I try to guess your mood. I will probably be wrong.'
   };
+
+  // Each colour gives the name a different shape: width and weight of the variable font
+  var shapes = {
+    '#C8352E': { s: 138, w: 860 },
+    '#E07A1F': { s: 124, w: 700 },
+    '#E5B92B': { s: 115, w: 500 },
+    '#3E9A5B': { s: 100, w: 400 },
+    '#2B8FB8': { s: 85, w: 250 },
+    '#2E5BBA': { s: 75, w: 800 },
+    '#7046A8': { s: 52, w: 900 }
+  };
+
+  var nameEl = document.getElementById('name');
+  var letters = [];
+  if (nameEl) {
+    var idx = 0;
+    nameEl.querySelectorAll('.line').forEach(function (line) {
+      var word = line.textContent;
+      line.textContent = '';
+      line.setAttribute('aria-hidden', 'true');
+      for (var k = 0; k < word.length; k++) {
+        var span = document.createElement('span');
+        span.className = 'ch';
+        span.textContent = word[k];
+        span.style.setProperty('--i', idx++);
+        line.appendChild(span);
+        letters.push(span);
+      }
+    });
+  }
+
+  function shapeName(hex) {
+    var sh = shapes[hex];
+    if (!sh || !nameEl) return;
+    nameEl.style.setProperty('--s', sh.s + '%');
+    nameEl.style.setProperty('--w', sh.w);
+    letters.forEach(function (l) {
+      l.style.removeProperty('--s');
+      l.style.removeProperty('--w');
+    });
+    nameEl.classList.add('tinted');
+  }
+
+  // Small extra: on a pointer device the letters swell under the cursor
+  if (nameEl && window.matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+    nameEl.addEventListener('pointermove', function (e) {
+      letters.forEach(function (l) {
+        var r = l.getBoundingClientRect();
+        var d = Math.abs(e.clientX - (r.left + r.width / 2)) + Math.abs(e.clientY - (r.top + r.height / 2)) * 0.6;
+        var f = Math.max(0, 1 - d / 220);
+        if (f > 0) l.style.setProperty('--w', Math.round(300 + 600 * f));
+        else l.style.removeProperty('--w');
+      });
+    });
+    nameEl.addEventListener('pointerleave', function () {
+      letters.forEach(function (l) { l.style.removeProperty('--w'); });
+    });
+  }
 
   var bands = document.getElementById('bands');
   var readHex = document.querySelector('.readout-hex');
@@ -58,6 +116,7 @@
       if (!btn) return;
       current = btn.getAttribute('data-hex');
       root.style.setProperty('--accent', current);
+      shapeName(current);
       bands.querySelectorAll('button').forEach(function (b) {
         b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
       });
