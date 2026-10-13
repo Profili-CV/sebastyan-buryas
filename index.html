@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/anybody.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=20">
+<link rel="stylesheet" href="style.css?v=22">
 <script>try{if(!sessionStorage.getItem("pl-seen"))document.documentElement.classList.add("pl-on")}catch(e){document.documentElement.classList.add("pl-on")}</script>
 </head>
 <body>
@@ -32,7 +32,7 @@
 
 <header class="nav">
   <a class="nav-name" href="#top">Sebastyan Buryas</a>
-  <a class="nav-mark" href="#top" aria-label="Torna all'inizio" data-en-label="Back to top"><span class="nav-logo" aria-hidden="true"></span></a>
+  <a class="nav-mark" href="index.html" aria-label="Home"><span class="nav-logo" aria-hidden="true"></span></a>
   <nav aria-label="Sezioni">
     <a href="#progetti" data-en="Work">Progetti</a>
     <a href="#fotografia" data-en="Photography">Fotografia</a>
@@ -71,9 +71,19 @@
     <h2 data-en="Work">Progetti</h2>
 
     <article class="feature">
-      <figure class="ph" style="--c:#2E5BBA">
-        <img src="img/chroma.jpg" alt="L'installazione CHROMA con la mascotte arcobaleno e, accanto, l'app didattica su telefono" data-en-alt="The CHROMA installation with its rainbow mascot and, beside it, the teaching app on a phone">
-      </figure>
+      <div class="feature-media">
+        <figure class="ph ph-wide" style="--c:#2E5BBA">
+          <img src="img/chroma/01-cover.jpg" alt="Copertina di CHROMA: la mascotte arcobaleno e il claim Una macchina che guarda i colori e prova a dirti chi sei" data-en-alt="CHROMA cover: the rainbow mascot and the line A machine that looks at colours and tries to tell you who you are">
+        </figure>
+        <div class="thumbs chroma-thumbs">
+          <img src="img/chroma/02-progetto.jpg" alt="Un progetto, tre formati: installazione, app e carte" data-en-alt="One project, three formats: installation, app and cards" loading="lazy">
+          <img src="img/chroma/08-competenze.jpg" alt="Cosa ho fatto: interaction design, art direction, UX/UI, sviluppo web, AI in locale, grafica" data-en-alt="What I did: interaction design, art direction, UX/UI, web development, local AI, graphics" loading="lazy">
+          <img src="img/chroma/carta-01-lo-sguardo.jpg" alt="Carta 01: Lo sguardo" data-en-alt="Card 01: The gaze" loading="lazy">
+          <img src="img/chroma/carta-03-il-prisma.jpg" alt="Carta 03: Il prisma" data-en-alt="Card 03: The prism" loading="lazy">
+          <img src="img/chroma/carta-11-il-pixel.jpg" alt="Carta 11: Il pixel" data-en-alt="Card 11: The pixel" loading="lazy">
+          <img src="img/chroma/carta-23-chroma.jpg" alt="Carta 23: CHROMA" data-en-alt="Card 23: CHROMA" loading="lazy">
+        </div>
+      </div>
       <div class="feature-text">
         <h3>CHROMA</h3>
         <p class="meta" data-en="Master's thesis project, Accademia Albertina · 2025–2026">Progetto di tesi magistrale, Accademia Albertina · 2025–2026</p>
@@ -156,53 +166,71 @@
 
   <section id="chi-sono" class="section about band band-tint">
     <h2 data-en="About">Chi sono</h2>
-    <div class="about-grid">
+    <div class="about-short">
       <img class="portrait" src="img/ritratto.jpg" alt="Sebastyan Buryas" width="808" height="904">
-      <div class="about-text">
-        <p class="scrub" data-en="I'm a media artist: I design images, interfaces and installations, and I build them too, from the first sketch to the code.">Sono un media artist: progetto immagini, interfacce e installazioni, e le costruisco anche, dal primo schizzo al codice.</p>
-        <p data-en="I was born in Ukraine and grew up near Turin. After a diploma in Graphics and Communication at IIS Giulio Natta, I studied Nuove Tecnologie dell'Arte at the Accademia Albertina: bachelor's with 109/110, master's with 110/110 and a thesis on CHROMA.">Sono nato in Ucraina e cresciuto vicino a Torino. Dopo il diploma in Grafica e Comunicazione all'IIS Giulio Natta ho studiato Nuove Tecnologie dell'Arte all'Accademia Albertina: triennale con 109/110, magistrale con 110/110 e una tesi su CHROMA.</p>
-        <p data-en="What drives me is colour: how we read it, and how machines think they read it. Following it I learned to move from Photoshop to Blender, from Premiere to JavaScript, all the way to AI models running locally.">Quello che mi muove è il colore: come lo leggiamo noi e come credono di leggerlo le macchine. Seguendolo ho imparato a passare da Photoshop a Blender, da Premiere a JavaScript, fino ai modelli di AI in locale.</p>
-        <dl class="facts">
-          <dt data-en="Design">Grafica</dt>
-          <dd>Adobe Creative Cloud, Affinity, Figma</dd>
-          <dt data-en="Video, 3D, audio">Video, 3D, audio</dt>
-          <dd>Premiere Pro, After Effects, DaVinci Resolve, Audition, Lightroom, Blender</dd>
-          <dt data-en="Code">Sviluppo</dt>
-          <dd>HTML, CSS, JavaScript, Flutter, TouchDesigner, WordPress, GitHub</dd>
-          <dt data-en="Languages">Lingue</dt>
-          <dd data-en="Ukrainian (native), Italian (C2), English (B2, First Certificate)">Ucraino (madrelingua), italiano (C2), inglese (B2, First Certificate)</dd>
-        </dl>
-        <p class="cv-cta"><a class="btn-cv" href="cv.html"><span data-en="Read the full CV">Leggi il CV completo</span> <span aria-hidden="true">→</span></a></p>
+      <div>
+        <p class="scrub" data-en="Media artist from Turin, born in Ukraine. I design images, interfaces and installations, and I build them too, from the sketch to the code.">Media artist di Torino, nato in Ucraina. Progetto immagini, interfacce e installazioni, e le costruisco anche, dallo schizzo al codice.</p>
+        <div class="about-buttons">
+          <a class="btn-big btn-solid" href="chi-sono.html"><span data-en="Find out more about me">Scopri chi sono</span> <span aria-hidden="true">→</span></a>
+          <a class="btn-big btn-line" href="cv-sebastyan-buryas.pdf" download><span data-en="Download CV">Scarica il CV</span> <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="percorso" class="section path">
     <h2 data-en="Path">Percorso</h2>
-    <ol class="path-list">
-      <li style="--c:#7046A8"><span class="path-years">2024–2026</span><span class="path-kind" data-en="Study">Studi</span><h3 data-en="Master's in Nuove Tecnologie dell'Arte – Media Art">Magistrale in Nuove Tecnologie dell'Arte – Media Art</h3><p class="path-where">Accademia Albertina, Torino</p><p data-en="110/110. Thesis: CHROMA, colour, hybrid media and research practices in media art.">110/110. Tesi: CHROMA, colore, hybrid media e pratiche di ricerca nella media art.</p></li>
-      <li style="--c:#2E5BBA"><span class="path-years">2022–2023</span><span class="path-kind" data-en="Work">Lavoro</span><h3 data-en="Graphic designer and communication">Grafico e comunicazione</h3><p class="path-where">Gold Music, Bruino (TO)</p><p data-en="Graphics for a musical instrument distributor, support on the new website, product photography, retouching and video editing.">Grafica per un distributore di strumenti musicali, supporto al nuovo sito, foto di prodotto, fotoritocco e montaggio video.</p></li>
-      <li style="--c:#2B8FB8"><span class="path-years">2021–2024</span><span class="path-kind" data-en="Study">Studi</span><h3 data-en="Bachelor's in Nuove Tecnologie dell'Arte">Triennale in Nuove Tecnologie dell'Arte</h3><p class="path-where">Accademia Albertina, Torino</p><p data-en="109/110. Thesis: colour psychology in cinema.">109/110. Tesi: la psicologia del colore nel cinema.</p></li>
-      <li style="--c:#3E9A5B"><span class="path-years">2021–2022</span><span class="path-kind" data-en="Work">Lavoro</span><h3 data-en="Waiter, delivery and kitchen help">Cameriere, fattorino e aiuto cucina</h3><p class="path-where">Tavernacolo, Orbassano (TO)</p></li>
-      <li style="--c:#E5B92B"><span class="path-years">2019</span><span class="path-kind" data-en="Exhibition">Mostra</span><h3 data-en="Photo exhibition “Segni d'acqua nelle Valli di Lanzo”">Mostra fotografica “Segni d'acqua nelle Valli di Lanzo”</h3><p class="path-where">Società Storica delle Valli di Lanzo</p></li>
-      <li style="--c:#E07A1F"><span class="path-years">2016–2021</span><span class="path-kind" data-en="Study">Studi</span><h3 data-en="Diploma in Graphics and Communication">Diploma in Grafica e Comunicazione</h3><p class="path-where">IIS Giulio Natta, Rivoli (TO)</p></li>
+    <p class="tl-legend"><span class="tl-key tl-key-l" data-en="Study">Studi</span><span class="tl-key tl-key-r" data-en="Work and projects">Lavoro e progetti</span></p>
+    <ol class="timeline">
+      <li class="tl-row tl-l" style="--c:#C8352E">
+        <span class="tl-year">2016</span>
+        <div class="tl-card"><span class="tl-kind" data-en="Study">Studi</span><h3 data-en="Diploma in Graphics and Communication">Diploma in Grafica e Comunicazione</h3><p class="tl-where">IIS Giulio Natta, Rivoli (TO)</p><p class="tl-period">2016 – 2021</p></div>
+      </li>
+      <li class="tl-row tl-r" style="--c:#E07A1F">
+        <span class="tl-year">2019</span>
+        <div class="tl-card"><span class="tl-kind" data-en="Exhibition">Mostra</span><h3 data-en="Exhibition “Segni d'acqua nelle Valli di Lanzo”">Mostra “Segni d'acqua nelle Valli di Lanzo”</h3><p class="tl-where">Società Storica delle Valli di Lanzo</p><p class="tl-period">2019</p></div>
+      </li>
+      <li class="tl-row tl-l" style="--c:#E5B92B">
+        <span class="tl-year">2021</span>
+        <div class="tl-card"><span class="tl-kind" data-en="Study">Studi</span><h3 data-en="Bachelor's in Nuove Tecnologie dell'Arte">Triennale in Nuove Tecnologie dell'Arte</h3><p class="tl-where">Accademia Albertina, Torino</p><p class="tl-period">2021 – 2024 · 109/110</p></div>
+      </li>
+      <li class="tl-row tl-r" style="--c:#3E9A5B">
+        <span class="tl-year">2021</span>
+        <div class="tl-card"><span class="tl-kind" data-en="Work">Lavoro</span><h3 data-en="Waiter, delivery and kitchen help">Cameriere, fattorino e aiuto cucina</h3><p class="tl-where">Tavernacolo, Orbassano (TO)</p><p class="tl-period" data-en="Aug 2021 – Jan 2022">ago 2021 – gen 2022</p></div>
+      </li>
+      <li class="tl-row tl-r" style="--c:#2B8FB8">
+        <span class="tl-year">2022</span>
+        <div class="tl-card"><span class="tl-kind" data-en="Work">Lavoro</span><h3 data-en="Graphic designer and communication">Grafico e comunicazione</h3><p class="tl-where">Gold Music, Bruino (TO)</p><p class="tl-period" data-en="Jul 2022 – Jan 2023">lug 2022 – gen 2023</p><p data-en="Graphics, website, product photos and video.">Grafica, sito, foto di prodotto e video.</p></div>
+      </li>
+      <li class="tl-row tl-l" style="--c:#2E5BBA">
+        <span class="tl-year">2024</span>
+        <div class="tl-card"><span class="tl-kind" data-en="Study">Studi</span><h3 data-en="Master's in Nuove Tecnologie dell'Arte – Media Art">Magistrale in Nuove Tecnologie dell'Arte – Media Art</h3><p class="tl-where">Accademia Albertina, Torino</p><p class="tl-period">2024 – 2026</p></div>
+      </li>
+      <li class="tl-row tl-r" style="--c:#7046A8">
+        <span class="tl-year">2025</span>
+        <div class="tl-card"><span class="tl-kind" data-en="Project">Progetto</span><h3 data-en="CHROMA">CHROMA</h3><p class="tl-where">Installazione, app e 25 carte</p><p class="tl-period">2025 – 2026</p><p data-en="My master's thesis project.">Il progetto di tesi magistrale.</p></div>
+      </li>
+      <li class="tl-row tl-now">
+        <span class="tl-year" data-en="Today">Oggi</span>
+        <div class="tl-card tl-card-now"><h3 data-en="Master's degree, 110/110">Laurea magistrale, 110/110</h3><p data-en="October 2026. Now I'm looking for the next project: let's talk.">Ottobre 2026. Ora cerco il prossimo progetto: parliamone.</p><a href="#contatti" data-en="Contact me →">Contattami →</a></div>
+      </li>
     </ol>
-    <p class="path-more"><span data-en="Also:">Inoltre:</span> <span data-en="steward on the set of the film Fast X in Turin, call centre operator at Colligo S.p.A., co-founder of Porcodduo Studio.">steward sul set del film Fast X a Torino, operatore call center per Colligo S.p.A., co-fondatore di Porcodduo Studio.</span></p>
+    <p class="path-more"><span data-en="Also:">Inoltre:</span> <span data-en="steward on the set of the film Fast X in Turin and call centre operator at Colligo S.p.A.">steward sul set del film Fast X a Torino e operatore call center per Colligo S.p.A.</span></p>
   </section>
 
   <section id="contatti" class="section contact band band-accent">
     <h2 data-en="Contact">Contatti</h2>
-    <p class="contact-lead" data-en="An installation, a website, an identity or a video: if you have a project, let's talk.">Un'installazione, un sito, un'identità o un video: se hai un progetto, parliamone.</p>
+    <p class="contact-big" data-en="Got a project? Let's talk.">Hai un progetto? <em>Parliamone.</em></p>
+    <p class="contact-lead" data-en="Installations, websites, identities, video: write to me, or find me on these channels.">Installazioni, siti, identità, video: scrivimi, oppure trovami su questi canali.</p>
     <div class="contact-main">
-      <a class="contact-mail" href="mailto:sebiburyas.sb12@gmail.com">sebiburyas.sb12@gmail.com</a>
-      <button class="copy-mail" type="button" data-copy="sebiburyas.sb12@gmail.com" data-en="Copy">Copia</button>
+      <a class="mail-btn" href="mailto:sebiburyas.sb12@gmail.com"><span class="mail-kind" data-en="Write to me">Scrivimi</span><span class="mail-addr">sebiburyas.sb12@gmail.com</span><span class="mail-arrow" aria-hidden="true">→</span></a>
+      <button class="copy-mail" type="button" data-copy="sebiburyas.sb12@gmail.com" data-en="Copy address">Copia indirizzo</button>
     </div>
-    <ul class="channels">
-      <li><a href="https://github.com/sebabreak" target="_blank" rel="noopener"><span class="ch-kind" data-en="Code">Codice</span><b>GitHub</b><span class="ch-arrow" aria-hidden="true">↗</span></a></li>
-      <li><a href="https://www.instagram.com/_seb01_photo/" target="_blank" rel="noopener"><span class="ch-kind" data-en="Photography">Fotografia</span><b>Instagram</b><span class="ch-arrow" aria-hidden="true">↗</span></a></li>
-      <li><a href="https://www.instagram.com/porcodduostudio/" target="_blank" rel="noopener"><span class="ch-kind">Studio</span><b>Porcodduo</b><span class="ch-arrow" aria-hidden="true">↗</span></a></li>
-      <li><a href="cv.html"><span class="ch-kind">Curriculum</span><b data-en="Online CV">CV online</b><span class="ch-arrow" aria-hidden="true">→</span></a></li>
-      <li><a href="cv-sebastyan-buryas.pdf" download><span class="ch-kind">Curriculum</span><b data-en="PDF CV">CV in PDF</b><span class="ch-arrow" aria-hidden="true">↓</span></a></li>
+    <ul class="socials">
+      <li><a class="soc soc-in" href="https://www.linkedin.com/in/sebastyan-buryas-93481b350/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3zM9.75 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.6 4.77 6v5.95h-4v-5.27c0-1.26-.02-2.88-1.76-2.88-1.76 0-2.03 1.37-2.03 2.79v5.36h-4z"/></svg><b>LinkedIn</b><span data-en="Work profile">Profilo lavorativo</span></a></li>
+      <li><a class="soc soc-gh" href="https://github.com/sebabreak" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><b>GitHub</b><span data-en="Code and projects">Codice e progetti</span></a></li>
+      <li><a class="soc soc-ig" href="https://www.instagram.com/_seb01_photo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg><b>Instagram</b><span data-en="My photography">Le mie foto</span></a></li>
+      <li><a class="soc soc-pd" href="https://www.instagram.com/porcodduostudio/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M3 12c3-6 6-6 9 0s6 6 9 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Porcodduo</b><span data-en="The studio">Lo studio</span></a></li>
     </ul>
   </section>
 </main>
@@ -211,8 +239,8 @@
   <p>© 2026 Sebastyan Buryas</p>
 </footer>
 
-<script src="script.js?v=11"></script>
-<script src="lightbox.js?v=1" data-images=".ph:not(.more) img, .thumbs img"></script>
+<script src="script.js?v=12"></script>
+<script src="lightbox.js?v=2" data-images=".ph:not(.more) img, .thumbs img"></script>
 <script src="lenis.min.js?v=1.1.13"></script>
 <script src="motion.js?v=1"></script>
 <script src="nav-active.js?v=1"></script>

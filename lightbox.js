@@ -55,8 +55,18 @@
     box.classList.toggle('single', items.length < 2);
   }
 
+  // Only the images of the same project or section scroll together.
+  var GROUP = '[data-lb-group], .thumbs, .photos, .album, .gallery, .posts-row, .doc, .feature, .card, .work, .step-media, .fl-grid, article, section';
+  function groupOf(img) {
+    var g = img.closest(GROUP);
+    // a project's cover and its small thumbnails belong together
+    if (g && g.matches('.thumbs')) g = g.closest('.card, .work, .feature, article') || g;
+    return g;
+  }
   function open(img) {
     collect();
+    var g = groupOf(img);
+    if (g) items = items.filter(function (el) { return groupOf(el) === g || g.contains(el); });
     labels();
     show(items.indexOf(img));
     if (box.showModal) box.showModal(); else box.setAttribute('open', '');
