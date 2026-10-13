@@ -335,3 +335,22 @@ html.lenis, html.lenis body { height: auto; }
 .cur-down .cur-ring::before { transform: scale(.8); }
 .cur-down .cur-ring.has-label::before { transform: scale(2.7); }
 .cs-momento .cur-label { color: #0A0A0A; }
+
+/* Logo S in the header */
+.nav-name { display: inline-flex; align-items: center; gap: 10px; }
+.nav-logo { display: inline-block; width: 20px; height: 29px; background: currentColor; -webkit-mask: url(img/logo-s.png) center / contain no-repeat; mask: url(img/logo-s.png) center / contain no-repeat; transition: background .3s ease; }
+.nav-name:hover .nav-logo { background: var(--accent); }
+
+/* Small extra images under a project */
+.thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 14px; }
+.thumbs img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 3px; display: block; }
+
+/* Project videos */
+.ph.vid { aspect-ratio: 16 / 9; background: #000; }
+.ph.vid video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.pair.motion { margin-top: 0; }
+
+/* Preloader: the S logo, painted with the palette */
+.pl-logo { width: 54px; height: 78px; margin-bottom: 6px; -webkit-mask: url(img/logo-s.png) center / contain no-repeat; mask: url(img/logo-s.png) center / contain no-repeat; background: linear-gradient(180deg, #C8352E, #E07A1F, #E5B92B, #3E9A5B, #2B8FB8, #2E5BBA, #7046A8); background-size: 100% 300%; animation: pl-paint 2.4s linear infinite, pl-fade .6s ease forwards; opacity: 0; }
+@keyframes pl-paint { from { background-position: 0 0; } to { background-position: 0 100%; } }
+@media (prefers-reduced-motion: reduce) { .pl-logo { animation: none; opacity: 1; } }
