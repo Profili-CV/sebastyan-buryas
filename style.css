@@ -168,7 +168,7 @@ h3 { font-family: var(--display); font-weight: 600; font-stretch: 92%; font-size
 
 /* About */
 .about-grid { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: start; }
-.portrait { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.portrait { width: 100%; height: auto; aspect-ratio: 808 / 904; object-fit: cover; border-radius: 4px; }
 .about-text > p { max-width: 36em; margin-top: 0; }
 .facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 24px; margin: 32px 0 0; }
 .facts dt { font-weight: 600; }
