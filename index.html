@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sebastyan Buryas · Media Art</title>
+<meta name="description" content="Sebastyan Buryas, media artist a Torino. Ricerca sul colore, installazioni interattive, web app, grafica e fotografia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#progetti" data-en="Skip to projects">Vai ai progetti</a>
+
+<header class="nav">
+  <a class="nav-name" href="#top">Sebastyan Buryas</a>
+  <nav aria-label="Sezioni">
+    <a href="#progetti" data-en="Work">Progetti</a>
+    <a href="#fotografia" data-en="Photography">Fotografia</a>
+    <a href="#chi-sono" data-en="About">Chi sono</a>
+    <a href="#contatti" data-en="Contact">Contatti</a>
+  </nav>
+  <button class="lang" type="button" id="lang" aria-label="Switch to English">EN</button>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <h1>Sebastyan<br>Buryas</h1>
+    <p class="hero-lead" data-en="Media artist in Turin. I study how we read colour, and how machines think they read it: interactive installations, web apps, graphics and photography.">Media artist a Torino. Studio come leggiamo il colore, e come le macchine credono di leggerlo: installazioni interattive, web app, grafica e fotografia.</p>
+
+    <div class="bands" id="bands" role="group" aria-label="Palette interattiva: scegli un colore" data-en-label="Interactive palette: pick a colour">
+      <button type="button" style="--c:#C8352E" data-hex="#C8352E" aria-label="Rosso"></button>
+      <button type="button" style="--c:#E07A1F" data-hex="#E07A1F" aria-label="Arancione"></button>
+      <button type="button" style="--c:#E5B92B" data-hex="#E5B92B" aria-label="Giallo"></button>
+      <button type="button" style="--c:#3E9A5B" data-hex="#3E9A5B" aria-label="Verde"></button>
+      <button type="button" style="--c:#2B8FB8" data-hex="#2B8FB8" aria-label="Azzurro"></button>
+      <button type="button" style="--c:#2E5BBA" data-hex="#2E5BBA" aria-label="Blu" aria-pressed="true"></button>
+      <button type="button" style="--c:#7046A8" data-hex="#7046A8" aria-label="Viola"></button>
+    </div>
+    <p class="readout" id="readout" aria-live="polite"><span class="readout-hex">#2E5BBA</span> <span class="readout-text">Scegli un colore: provo a indovinare il tuo stato d'animo. Probabilmente sbaglierò.</span></p>
+  </section>
+
+  <section id="progetti" class="section">
+    <h2 data-en="Work">Progetti</h2>
+
+    <article class="feature">
+      <figure class="ph" style="--c:#2E5BBA">
+        <img src="img/chroma.jpg" alt="L'installazione CHROMA" data-en-alt="The CHROMA installation" onerror="this.remove()">
+        <figcaption>img/chroma.jpg</figcaption>
+      </figure>
+      <div class="feature-text">
+        <h3>CHROMA</h3>
+        <p class="meta" data-en="Master's thesis project, Accademia Albertina · 2025–2026">Progetto di tesi magistrale, Accademia Albertina · 2025–2026</p>
+        <p data-en="An installation about chromatic over-interpretation. A webcam picks out the dominant colours of the person in front of it, and an AI running locally assigns them moods it cannot possibly know. Then it asks: do you recognise yourself in this?">Un'installazione sulla sovrainterpretazione cromatica. Una webcam estrae i colori dominanti di chi le sta davanti e un'AI in locale gli attribuisce stati d'animo che non può conoscere. Poi chiede: ti riconosci in questa interpretazione?</p>
+        <p data-en="Around it: a teaching app designed in Figma and written in HTML, CSS and JavaScript, a deck of 25 cards the installation recognises, and a printed thesis with colour compositions CHROMA can read.">Attorno all'installazione: un'app didattica disegnata in Figma e scritta in HTML, CSS e JavaScript, un mazzo di 25 carte riconosciute dall'installazione e la tesi stampata con composizioni cromatiche leggibili da CHROMA.</p>
+        <p class="tags">k-means · Ollama · PWA · Figma · Affinity</p>
+        <p class="links">
+          <a href="https://sebabreak.github.io/Chroma/sovrainterpretazione-cromatica/" data-en="Try the installation">Prova l'installazione</a>
+          <a href="https://sebabreak.github.io/Chroma/app/" data-en="Open the app">Apri l'app didattica</a>
+        </p>
+      </div>
+    </article>
+
+    <div class="pair">
+      <article class="card">
+        <figure class="ph" style="--c:#C8352E">
+          <img src="img/tesi-triennale.jpg" alt="Copertina della tesi triennale" data-en-alt="Bachelor's thesis cover" onerror="this.remove()">
+          <figcaption>img/tesi-triennale.jpg</figcaption>
+        </figure>
+        <h3 data-en="Colour psychology in cinema">La psicologia del colore nel cinema</h3>
+        <p class="meta" data-en="Bachelor's thesis · 2023–2024">Tesi triennale · 2023–2024</p>
+        <p data-en="How colour shapes the viewer's mood and perception. The starting point of the research that became CHROMA.">Come i colori influenzano lo stato d'animo e la percezione dello spettatore. Il punto di partenza della ricerca che è diventata CHROMA.</p>
+      </article>
+      <article class="card">
+        <figure class="ph" style="--c:#3E9A5B">
+          <img src="img/porcodduo.jpg" alt="Lavori di Porcodduo Studio" data-en-alt="Work by Porcodduo Studio" onerror="this.remove()">
+          <figcaption>img/porcodduo.jpg</figcaption>
+        </figure>
+        <h3>Porcodduo Studio</h3>
+        <p class="meta" data-en="Co-founder, with Filippo Di-Carlo">Co-fondatore, con Filippo Di-Carlo</p>
+        <p data-en="A visual experiments studio born at the Academy: graphics, mockups, 3D and video, between glitch, scans and print.">Uno studio di sperimentazione visiva nato in Accademia: grafica, mockup, 3D e video, tra glitch, scansioni e stampa.</p>
+        <p class="links">
+          <a href="https://porcodduo-studio.github.io/porcodduo-studio/" data-en="Studio website">Sito dello studio</a>
+          <a href="https://www.instagram.com/porcodduostudio/">Instagram</a>
+        </p>
+      </article>
+    </div>
+
+    <h3 class="sub" data-en="Graphics">Grafica</h3>
+    <div class="posters">
+      <figure class="ph poster" style="--c:#2B8FB8">
+        <img src="img/zero-robotics.jpg" alt="Poster Zero Robotics" onerror="this.remove()">
+        <figcaption>img/zero-robotics.jpg</figcaption>
+        <p class="poster-cap">Zero Robotics</p>
+      </figure>
+      <figure class="ph poster" style="--c:#7046A8">
+        <img src="img/art-for.jpg" alt="Poster Art For" onerror="this.remove()">
+        <figcaption>img/art-for.jpg</figcaption>
+        <p class="poster-cap">Art For</p>
+      </figure>
+      <figure class="ph poster" style="--c:#E07A1F">
+        <img src="img/oriente.jpg" alt="Poster L'Oriente sempre in tasca" onerror="this.remove()">
+        <figcaption>img/oriente.jpg</figcaption>
+        <p class="poster-cap">L'Oriente sempre in tasca</p>
+      </figure>
+    </div>
+  </section>
+
+  <section id="fotografia" class="section">
+    <h2 data-en="Photography">Fotografia</h2>
+    <p class="intro" data-en="Night, cities and landscapes, shot on a Nikon D3500. In 2019 my photographs were shown in “Segni d'acqua nelle Valli di Lanzo”, with the Società Storica delle Valli di Lanzo.">Notturni, città e paesaggi, scattati con una Nikon D3500. Nel 2019 le mie foto sono state esposte nella mostra <em>Segni d'acqua nelle Valli di Lanzo</em>, con la Società Storica delle Valli di Lanzo.</p>
+    <div class="photos">
+      <figure class="ph" style="--c:#17171C"><img src="img/foto-1.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-1.jpg</figcaption></figure>
+      <figure class="ph" style="--c:#2E5BBA"><img src="img/foto-2.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-2.jpg</figcaption></figure>
+      <figure class="ph" style="--c:#3E9A5B"><img src="img/foto-3.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-3.jpg</figcaption></figure>
+      <figure class="ph" style="--c:#E5B92B"><img src="img/foto-4.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-4.jpg</figcaption></figure>
+      <figure class="ph" style="--c:#C8352E"><img src="img/foto-5.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-5.jpg</figcaption></figure>
+      <figure class="ph" style="--c:#7046A8"><img src="img/foto-6.jpg" alt="" onerror="this.remove()"><figcaption>img/foto-6.jpg</figcaption></figure>
+    </div>
+    <p class="links"><a href="https://www.instagram.com/_seb01_photo/" data-en="More on Instagram">Altre foto su Instagram</a></p>
+  </section>
+
+  <section id="chi-sono" class="section about">
+    <h2 data-en="About">Chi sono</h2>
+    <div class="about-grid">
+      <img class="portrait" src="img/ritratto.jpg" alt="Sebastyan Buryas" width="320" height="320">
+      <div class="about-text">
+        <p data-en="I was born in Ukraine and grew up in Italy, near Turin. I studied graphic design and communication in high school, then Nuove Tecnologie dell'Arte at the Accademia Albertina, where I graduated with a bachelor's (109/110) and a master's degree (110/110).">Sono nato in Ucraina e cresciuto in Italia, vicino a Torino. Ho studiato grafica e comunicazione alle superiori, poi Nuove Tecnologie dell'Arte all'Accademia Albertina, dove ho preso la triennale (109/110) e la magistrale (110/110).</p>
+        <p data-en="I like projects where design and code meet: I draw the interface, write it, and put it online myself.">Mi piacciono i progetti dove grafica e codice si incontrano: disegno l'interfaccia, la scrivo e la metto online da solo.</p>
+
+        <dl class="facts">
+          <dt data-en="Design">Design</dt>
+          <dd>Affinity, Photoshop, InDesign, Figma <span class="muted" data-en="· previously Illustrator, Premiere Pro, After Effects, Lightroom, XD, DaVinci Resolve">· in passato Illustrator, Premiere Pro, After Effects, Lightroom, XD, DaVinci Resolve</span></dd>
+          <dt data-en="Code">Sviluppo</dt>
+          <dd>HTML, CSS, JavaScript, PWA, VS Code, GitHub</dd>
+          <dt data-en="AI">AI</dt>
+          <dd data-en="Local models (Ollama), colour extraction with k-means, webcam input">Modelli in locale (Ollama), estrazione del colore con k-means, input da webcam</dd>
+          <dt data-en="Languages">Lingue</dt>
+          <dd data-en="Ukrainian (native), Italian (C2), English (B2, First Certificate)">Ucraino (madrelingua), italiano (C2), inglese (B2, First Certificate)</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti" class="section contact">
+    <h2 data-en="Contact">Contatti</h2>
+    <p class="contact-lead" data-en="Looking for someone for an installation, a website or a visual project? Write to me.">Cerchi qualcuno per un'installazione, un sito o un progetto visivo? Scrivimi.</p>
+    <a class="contact-mail" href="mailto:sebiburyas.sb12@gmail.com">sebiburyas.sb12@gmail.com</a>
+    <p class="links">
+      <a href="cv-sebastyan-buryas.pdf" download data-en="Download CV (PDF)">Scarica il CV (PDF)</a>
+      <a href="https://github.com/sebabreak">GitHub</a>
+      <a href="https://www.instagram.com/_seb01_photo/">Instagram</a>
+    </p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>© 2026 Sebastyan Buryas</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
