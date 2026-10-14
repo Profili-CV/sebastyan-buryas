@@ -174,7 +174,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // 1. Reveal on scroll
-  var targets = document.querySelectorAll('.section h2, .feature, .pair .card, .sub, .posters figure, .photos figure, .about-grid > *, .contact-lead, .contact-main, .tl-row, .socials li, .about-short > *');
+  var targets = document.querySelectorAll('.section h2, .section .page-h, .feature, .pair .card, .sub, .posters figure, .photos figure, .about-grid > *, .contact-lead, .contact-main, .tl-row, .socials li, .about-short > *');
   if (!reduce && 'IntersectionObserver' in window) {
     targets.forEach(function (el, i) {
       el.classList.add('reveal');

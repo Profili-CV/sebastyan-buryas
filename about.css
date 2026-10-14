@@ -8,7 +8,7 @@
 .ab-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; }
 .ab-photo-strip { position: absolute; left: -14px; right: 14px; bottom: -14px; height: 14px; background: linear-gradient(90deg, #C8352E 0 14.28%, #E07A1F 0 28.57%, #E5B92B 0 42.85%, #3E9A5B 0 57.14%, #2B8FB8 0 71.42%, #2E5BBA 0 85.71%, #7046A8 0); border-radius: 3px; }
 .ab-hello { margin: 0; font-size: clamp(18px, 2vw, 24px); color: var(--grey); }
-.ab-name { margin: 0; font-family: var(--display); font-weight: 800; font-stretch: 125%; font-size: clamp(56px, 10vw, 150px); line-height: .9; letter-spacing: -0.03em; color: var(--accent); }
+.ab-name { margin: 0; font-family: var(--display); font-weight: 800; font-stretch: 125%; font-size: clamp(56px, 10vw, 150px); line-height: .9; letter-spacing: -0.03em; color: var(--accent-big); }
 .ab-intro { margin: 20px 0 0; font-family: var(--display); font-weight: 500; font-size: clamp(20px, 2.4vw, 30px); line-height: 1.25; max-width: 20em; }
 .ab-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .ab-buttons-center { justify-content: center; }
@@ -16,7 +16,7 @@
 .ab-numbers { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; padding-top: 0 !important; padding-bottom: 0 !important; }
 .ab-numbers div { padding: 24px 20px; border-top: 2px solid var(--ink); border-right: 1px solid var(--rule); display: grid; gap: 6px; align-content: start; }
 .ab-numbers div:last-child { border-right: 0; }
-.ab-numbers b { font-family: var(--display); font-weight: 800; font-stretch: 120%; font-size: clamp(40px, 5vw, 64px); line-height: 1; color: var(--accent); }
+.ab-numbers b { font-family: var(--display); font-weight: 800; font-stretch: 120%; font-size: clamp(40px, 5vw, 64px); line-height: 1; color: var(--accent-big); }
 .ab-numbers small { font-size: .4em; color: var(--grey); font-weight: 600; }
 .ab-numbers span { font-size: 15px; color: var(--grey); }
 
@@ -24,7 +24,7 @@
 .ab-chapters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; counter-reset: ch; }
 .ab-chapters article { position: relative; padding: 28px 28px 28px 92px; border-radius: 8px; background: color-mix(in srgb, var(--accent) 7%, var(--paper)); }
 .ab-chapters article:nth-child(5) { grid-column: 1 / -1; }
-.ab-step { position: absolute; left: 24px; top: 24px; font-family: var(--display); font-weight: 800; font-stretch: 120%; font-size: 40px; line-height: 1; color: var(--accent); }
+.ab-step { position: absolute; left: 24px; top: 24px; font-family: var(--display); font-weight: 800; font-stretch: 120%; font-size: 40px; line-height: 1; color: var(--accent-big); }
 .ab-chapters h3 { margin: 0 0 8px; font-family: var(--display); font-size: 22px; }
 .ab-chapters p { margin: 0; line-height: 1.6; }
 
@@ -33,7 +33,7 @@
 .ab-grid li:nth-child(3) { color: #17171C; }
 .ab-grid li:hover { transform: translateY(-4px) rotate(-.4deg); }
 .ab-grid h3 { margin: 0 0 8px; font-family: var(--display); font-size: 22px; line-height: 1.15; }
-.ab-grid p { margin: 0; font-size: 15px; line-height: 1.5; opacity: .92; }
+.ab-grid p { margin: 0; font-size: 15px; line-height: 1.5; }
 
 .ab-tools { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(28px, 5vw, 64px); }
 .ab-tools h2 { grid-column: 1 / -1; }

@@ -21,7 +21,7 @@
   }
 
   // 2. Section headings rise letter by letter when they enter the screen
-  var heads = Array.prototype.slice.call(document.querySelectorAll('.section h2'));
+  var heads = Array.prototype.slice.call(document.querySelectorAll('.section h2, .section .page-h'));
   function splitHead(h) {
     var text = h.textContent;
     h.setAttribute('aria-label', text.trim());
