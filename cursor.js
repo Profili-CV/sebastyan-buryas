@@ -20,7 +20,8 @@
     if (el.closest('.zoomable, .ph img, .album img, .cw-media img, .lm img, .cd-gallery img, .ff-posts img')) return it() ? 'Apri' : 'Open';
     return '';
   }
-  var CLICK = 'a, button, [role="button"], label, summary, .lang, select';
+  // only the main, useful controls get the frame (calls to action, contact channels, language, players)
+  var CLICK = '.btn-big, .btn-cv, .btn-chroma, .copy-mail, .soc, .lang, .burger, .play-btn, .fl-play, .pp-btn, .wof-spin, .send-btn, .more-btn, .nav-in, .ch-filter button, [data-frame]';
   window.addEventListener('mousemove', function (e) {
     mx = e.clientX; my = e.clientY;
     if (!seen) { x = mx; y = my; seen = true; root.classList.add('cframe-on'); }

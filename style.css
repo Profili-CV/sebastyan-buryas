@@ -641,3 +641,30 @@ html { scrollbar-color: color-mix(in srgb, var(--ink) 35%, transparent) transpar
 .fx-pow-b { right: -10px; top: 22%; z-index: 2; }
 .fx-pow-c { left: 40%; bottom: auto; top: calc(var(--fig-h, 300px) - 46px); z-index: 0; }
 @media (max-width: 760px) { .fx-pow-a { left: -6px; } .fx-pow-b { right: -4px; } }
+
+/* Home: button to the CHROMA page, with the mascot's rainbow ring */
+.ch-cta { margin: 22px 0 6px; }
+.btn-chroma { position: relative; isolation: isolate; color: #EDEDEA; background: #141418; border: 0; }
+.btn-chroma::before { content: ""; position: absolute; inset: -2.5px; z-index: -1; border-radius: inherit; background: conic-gradient(from var(--ang, 0deg), #C8352E, #E07A1F, #E5B92B, #3E9A5B, #2B8FB8, #2E5BBA, #7046A8, #C8352E); }
+.btn-chroma::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: #141418; }
+@property --ang { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@media (hover: hover) and (pointer: fine) { .btn-chroma:hover { color: #fff; } .btn-chroma:hover::before { animation: ch-ring 2.4s linear infinite; } }
+@keyframes ch-ring { to { --ang: 360deg; } }
+
+/* Viewfinder (photo-vf.js): hover with a mouse, centre of the screen on touch */
+.fx-vf { transition: inset .35s cubic-bezier(0.23, 1, 0.32, 1), opacity .2s ease; }
+.ph.fx-af .fx-vf b { animation: vf-af .5s steps(2, jump-none) 2; }
+@keyframes vf-af { 0% { border-color: #fff; } 100% { border-color: #7CFC9A; } }
+.ph.fx-snap::after { display: none; }
+/* photo page: shooting data like a camera's viewfinder readout */
+.fx-vf-data .vf-top, .fx-vf-data .vf-lcd { position: absolute; left: 0; right: 0; display: flex; justify-content: center; gap: 14px; font: 600 12px/1.2 ui-monospace, Menlo, Consolas, monospace; letter-spacing: .04em; color: #7CFC9A; text-shadow: 0 1px 3px rgba(0,0,0,.85); white-space: nowrap; }
+.fx-vf-data .vf-top { top: 8px; color: #fff; font-weight: 500; font-size: 11px; opacity: .9; }
+.fx-vf-data .vf-lcd { bottom: 8px; font-size: 13px; }
+.album .ph.fx-focus::before { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(rgba(0,0,0,.45), transparent 22%, transparent 72%, rgba(0,0,0,.55)); }
+.album .ph.fx-focus .fx-vf { inset: 6%; }
+@media (max-width: 760px) { .fx-vf-data .vf-lcd { gap: 8px; font-size: 11px; } .fx-vf-data .vf-top { font-size: 10px; white-space: normal; text-align: center; padding: 0 6%; } }
+a.btn-chroma, a.btn-chroma:hover { color: #EDEDEA; opacity: 1; } @media (hover: hover) and (pointer: fine) { a.btn-chroma:hover { color: #fff; } }
+@media (max-width: 760px) {
+  .fx-vf-data .vf-lcd { flex-wrap: wrap; white-space: normal; gap: 2px 8px; font-size: 10.5px; padding: 0 4%; bottom: 6px; }
+  .fx-vf-data .vf-top { top: 6px; }
+}

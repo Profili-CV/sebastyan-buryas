@@ -1,7 +1,7 @@
 // Small scroll-driven touches, each tied to its project:
 // Cartoombria → comic onomatopoeias pop around the booth; Porcodduo → the studio's wave draws itself;
 // LED installation → a strip of LEDs lights up; cave painting → hand stamps appear;
-// Photography → a viewfinder locks onto the photo in the middle of the screen; Path → the timeline fills.
+// Path → the timeline fills.
 // All decorative (aria-hidden). With reduced motion everything is shown in its final state, still.
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -47,21 +47,6 @@
     var cfig = cave.querySelector('.ph'), spots = ['fx-hand-a', 'fx-hand-b', 'fx-hand-c'];
     var hands = spots.map(function (c) { var h = mk('span', 'fx-hand ' + c, hand); cfig.appendChild(h); return h; });
     add(cave, function (p) { hands.forEach(function (h, i) { h.classList.toggle('on', reduce || p > 0.25 + i * 0.12); }); });
-  }
-  // 5. Photography: viewfinder on the photo closest to the middle of the screen
-  var photos = Array.prototype.slice.call(document.querySelectorAll('#fotografia .photos .ph'));
-  if (photos.length) {
-    photos.forEach(function (f) { f.appendChild(mk('span', 'fx-vf', '<i></i><i></i><i></i><i></i><b></b>')); });
-    var current = null;
-    add(document.querySelector('#fotografia .photos'), function () {
-      var mid = window.innerHeight / 2, best = null, bd = 1e9;
-      photos.forEach(function (f) { var r = f.getBoundingClientRect(); var dd = Math.abs(r.top + r.height / 2 - mid) + Math.abs(r.left + r.width / 2 - window.innerWidth / 2) * 0.35; if (dd < bd && r.bottom > 0 && r.top < window.innerHeight) { bd = dd; best = f; } });
-      if (best !== current) {
-        if (current) current.classList.remove('fx-focus');
-        current = best;
-        if (current) { current.classList.remove('fx-snap'); void current.offsetWidth; current.classList.add('fx-focus', 'fx-snap'); }
-      }
-    });
   }
   // 6. Path: the timeline fills with colour as you go
   var tl = document.querySelector('#percorso .timeline');
