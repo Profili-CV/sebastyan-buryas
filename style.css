@@ -555,3 +555,12 @@ html { scrollbar-color: color-mix(in srgb, var(--ink) 35%, transparent) transpar
   .lang, .copy-mail, .pp-btn { min-height: 44px; }
   .nav-in { min-width: 44px; min-height: 44px; }
 }
+/* Frame cursor (cursor.js): hollow ring that frames clickable things, label beside the pointer on images */
+.cframe { position: fixed; left: 0; top: 0; z-index: 99; pointer-events: none; box-sizing: border-box; border: 2px solid var(--accent); border-radius: 13px; opacity: 0; transition: opacity .2s ease, border-color .2s ease, border-width .15s ease; will-change: transform; }
+.cframe-on .cframe { opacity: .9; }
+.cframe.is-framing { border-width: 2px; opacity: 1; }
+.cframe.is-down { border-width: 3px; }
+.cframe.is-text { opacity: 0 !important; }
+.ctag { position: fixed; left: 0; top: 0; z-index: 99; pointer-events: none; padding: 6px 11px; border-radius: 999px; background: var(--ink); color: var(--paper); font: 600 12.5px/1 var(--body); letter-spacing: .02em; white-space: nowrap; opacity: 0; scale: .85; transition: opacity .18s ease, scale .25s cubic-bezier(0.23, 1, 0.32, 1); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+.ctag.is-on { opacity: 1; scale: 1; }
+@media (prefers-reduced-motion: reduce) { .ctag { transition: opacity .15s ease; } }
