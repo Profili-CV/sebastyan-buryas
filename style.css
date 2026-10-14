@@ -477,3 +477,26 @@ html.lenis, html.lenis body { height: auto; }
 @media (max-width: 900px) { .socials { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .socials { grid-template-columns: minmax(0, 1fr); } .mail-btn { padding: 16px 20px; } }
 .mail-btn, .mail-btn:hover { background: #17171C; color: #fff; }
+
+/* Phone header: the S logo takes the place of the name, so they no longer overlap */
+@media (max-width: 760px) {
+  .nav-name { display: none; }
+  .nav-mark { position: static; transform: none; order: -1; margin-right: auto; width: 48px; height: 48px; margin-left: -8px; }
+  .nav-mark .nav-logo { width: 28px; height: 41px; }
+}
+
+/* Contact channels: each card in its own app colour */
+.soc, .soc:hover { color: #fff; }
+.soc span, .soc:hover span { color: rgba(255,255,255,.85); }
+.soc-in { background: #0A66C2; }
+.soc-gh { background: #17171C; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.soc-ig { background: linear-gradient(135deg, #FEDA75 -20%, #F58529 15%, #DD2A7B 55%, #8134AF 90%); }
+.soc-pd, .soc-pd:hover { background: #E8A0A8; color: #17171C; }
+.soc-pd span, .soc-pd:hover span { color: rgba(23,23,28,.75); }
+.soc { box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+.soc:hover { transform: translateY(-4px) rotate(-.6deg); filter: saturate(1.1) brightness(1.05); }
+.soc-in:hover { background: #0A66C2; } .soc-gh:hover { background: #17171C; } .soc-ig:hover { background: linear-gradient(135deg, #FEDA75 -20%, #F58529 15%, #DD2A7B 55%, #8134AF 90%); }
+/* the accent band paints links dark: keep the mail button and channel cards readable */
+.band-accent a.mail-btn, .band-accent a.mail-btn:hover { color: #fff; opacity: 1; }
+.band-accent a.soc, .band-accent a.soc:hover { color: #fff; opacity: 1; }
+.band-accent a.soc-pd, .band-accent a.soc-pd:hover { color: #17171C; }
