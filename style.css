@@ -577,3 +577,67 @@ html { scrollbar-color: color-mix(in srgb, var(--ink) 35%, transparent) transpar
 .buddy.say-left .buddy-say { left: auto; right: 70%; border-radius: 14px 14px 4px 14px; transform-origin: 100% 100%; }
 @media (max-width: 760px) { .buddy-say { font-size: 12px; } }
 @media (prefers-reduced-motion: reduce) { .buddy-body img { animation: none; } }
+
+/* ---- Scroll touches (scroll-fx.js) ---- */
+/* Cartoombria: comic onomatopoeias with halftone */
+.fx-pow { position: absolute; z-index: 2; display: grid; place-items: center; width: clamp(78px, 9vw, 112px); aspect-ratio: 1; pointer-events: none;
+  clip-path: polygon(50% 0, 61% 18%, 82% 8%, 78% 30%, 100% 36%, 83% 52%, 98% 70%, 75% 71%, 76% 94%, 57% 80%, 44% 100%, 37% 79%, 15% 90%, 20% 68%, 0 60%, 18% 46%, 4% 26%, 27% 26%, 26% 4%, 42% 17%);
+  background: radial-gradient(circle, rgba(0,0,0,.18) 1.2px, transparent 1.6px) 0 0 / 7px 7px, var(--pc, #E5B92B);
+  scale: 0; rotate: var(--r, -8deg); transition: scale .45s cubic-bezier(.2,1.7,.4,1); }
+.fx-pow span { font: 800 clamp(15px, 1.6vw, 20px)/1 var(--display); color: #fff; letter-spacing: .02em; -webkit-text-stroke: 1.5px #17171C; paint-order: stroke fill; text-shadow: 2px 2px 0 #17171C; }
+.fx-pow.on { scale: 1; }
+.fx-pow-a { left: 4%; top: 6%; --pc: #E5B92B; --r: -10deg; }
+.fx-pow-b { right: 5%; top: 30%; --pc: #C8352E; --r: 9deg; }
+.fx-pow-c { left: 36%; bottom: 6%; --pc: #2B8FB8; --r: -4deg; }
+/* Porcodduo: the studio's wave */
+.fx-wave { height: 22px; margin: 14px 0 -4px; }
+.fx-wave svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.fx-wave path { fill: none; stroke: #E8A0A8; stroke-width: 3.2; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; }
+/* LED strip */
+.fx-leds { display: grid; grid-template-columns: repeat(28, minmax(0, 1fr)); gap: 4px; margin: 14px 0 -2px; }
+.fx-leds i { aspect-ratio: 1; border-radius: 50%; background: color-mix(in srgb, var(--ink) 12%, transparent); transition: background .25s ease, box-shadow .25s ease; }
+.fx-leds i.on { background: hsl(var(--h) 95% 62%); box-shadow: 0 0 8px hsl(var(--h) 95% 60% / .8); }
+/* Cave painting: ochre hand stamps */
+.fx-hand { position: absolute; z-index: 2; width: clamp(34px, 4vw, 52px); pointer-events: none; opacity: 0; scale: 1.5; transition: opacity .25s ease, scale .35s cubic-bezier(0.23, 1, 0.32, 1); mix-blend-mode: multiply; }
+.fx-hand svg { display: block; width: 100%; fill: #A8461F; opacity: .85; }
+.fx-hand.on { opacity: 1; scale: 1; }
+.fx-hand-a { left: 6%; top: 10%; rotate: -18deg; }
+.fx-hand-b { right: 8%; top: 18%; rotate: 14deg; }
+.fx-hand-c { right: 22%; bottom: 8%; rotate: -6deg; }
+.fx-hand-c svg { fill: #6B2A12; }
+/* Photography: viewfinder */
+.fx-vf { position: absolute; inset: 10%; z-index: 2; pointer-events: none; opacity: 0; transition: inset .4s cubic-bezier(0.23, 1, 0.32, 1), opacity .3s ease; }
+.fx-vf i { position: absolute; width: 18%; aspect-ratio: 1; border: 0 solid rgba(255,255,255,.95); }
+.fx-vf i:nth-child(1) { left: 0; top: 0; border-width: 2px 0 0 2px; }
+.fx-vf i:nth-child(2) { right: 0; top: 0; border-width: 2px 2px 0 0; }
+.fx-vf i:nth-child(3) { left: 0; bottom: 0; border-width: 0 0 2px 2px; }
+.fx-vf i:nth-child(4) { right: 0; bottom: 0; border-width: 0 2px 2px 0; }
+.fx-vf b { position: absolute; left: 50%; top: 50%; width: 9%; aspect-ratio: 1; translate: -50% -50%; border: 2px solid #7CFC9A; border-radius: 2px; }
+.ph.fx-focus .fx-vf { opacity: 1; inset: 7%; }
+.ph.fx-snap::after { content: ""; position: absolute; inset: 0; z-index: 3; background: #fff; pointer-events: none; animation: fx-flash .45s ease-out both; }
+@keyframes fx-flash { from { opacity: .45; } to { opacity: 0; } }
+.photos .ph.more .fx-vf { display: none; }
+/* Path: rainbow line fills with scroll */
+.timeline::before { transform-origin: 50% 0; transform: translateX(-1px) scaleY(var(--tl-p, 1)); }
+.timeline::after { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; transform: translateX(-1px); background: var(--rule); border-radius: 2px; z-index: -1; }
+@media (max-width: 760px) { .timeline::after { left: 36px; } }
+/* Reduced motion: final states, no flashes */
+.fx-still .fx-pow, .fx-still .fx-hand, .fx-still .fx-vf { transition: none; }
+.fx-still .ph.fx-snap::after { animation: none; display: none; }
+.timeline { isolation: isolate; }
+
+/* Depth: the touches can pass behind the images, not only over them */
+#progetti .feature-media .ph { z-index: 2; }
+.buddy { transition: opacity .5s ease, filter .35s ease; }
+.buddy .buddy-body img { transition: scale .35s cubic-bezier(0.23, 1, 0.32, 1); }
+.buddy.is-behind { z-index: 1; filter: brightness(.75) saturate(.8); }
+.buddy.is-behind .buddy-body img { scale: .82; }
+.buddy.is-behind .buddy-say { opacity: 0; }
+#progetti .pair:not(.motion) .card { position: relative; }
+#progetti .pair:not(.motion) .card .ph { z-index: 1; }
+.fx-pow { z-index: 2; }
+/* SBAM peeks out from behind the top-left corner, POW sits in front on the right edge, WOW peeks from under the bottom */
+.fx-pow-a { left: -14px; top: -18px; z-index: 0; }
+.fx-pow-b { right: -10px; top: 22%; z-index: 2; }
+.fx-pow-c { left: 40%; bottom: auto; top: calc(var(--fig-h, 300px) - 46px); z-index: 0; }
+@media (max-width: 760px) { .fx-pow-a { left: -6px; } .fx-pow-b { right: -4px; } }

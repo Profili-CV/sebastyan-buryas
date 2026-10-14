@@ -37,7 +37,7 @@
     var maxX = f.width - size * 0.85; // never pushes the page sideways
     if (r.width < f.width * 0.8) maxX = Math.min(maxX, r.right - f.left - size * 0.55); // text beside: stay on the cover's side
     tx = Math.max(-size * 0.15, Math.min(maxX, tx));
-    return { x: tx, y: ty, p: p };
+    return { x: tx, y: ty, p: p, back: Math.sin(a) < -0.15 };
   }
   function place(t) {
     var dx = t.x - lastX; lastX = t.x;
@@ -57,6 +57,7 @@
     var t = target();
     if (x === null) { x = t.x; y = t.y; }
     x += (t.x - x) * 0.12; y += (t.y - y) * 0.12;
+    b.classList.toggle('is-behind', t.back);
     place({ x: x, y: y, p: t.p });
     requestAnimationFrame(loop);
   }
