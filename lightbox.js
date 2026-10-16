@@ -6,7 +6,7 @@
   var box = document.createElement('dialog');
   box.className = 'lightbox';
   box.innerHTML =
-    '<img class="lb-img" src="" alt="">' +
+    '<img class="lb-img" alt="">' +
     '<button class="lb-btn lb-close" type="button" data-lb="close"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>' +
     '<button class="lb-btn lb-prev" type="button" data-lb="prev"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
     '<button class="lb-btn lb-next" type="button" data-lb="next"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
