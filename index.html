@@ -21,8 +21,8 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/anybody.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=38x">
-<link rel="stylesheet" href="lab.css?v=3">
+<link rel="stylesheet" href="style.css?v=40">
+<link rel="stylesheet" href="lab.css?v=4">
 <script>try{if(!sessionStorage.getItem("pl-seen"))document.documentElement.classList.add("pl-on")}catch(e){document.documentElement.classList.add("pl-on")}</script>
 </head>
 <body>
@@ -161,13 +161,13 @@
     <h2 data-en="Photography">Fotografia</h2>
     <p class="intro" data-en="Nature, cities and nights, mostly shot on a Nikon D3500.">Natura, città e notturni, scattati soprattutto con una Nikon D3500.</p>
     <div class="photos">
-      <figure class="ph" style="--c:#17171C"><img src="img/foto/foto-01.webp" data-full="img/foto/foto-01-full.webp" alt="Funghi nel sottobosco" data-en-alt="Mushrooms on the forest floor" loading="lazy"></figure>
-      <figure class="ph" style="--c:#2E5BBA"><img src="img/foto/foto-02.webp" data-full="img/foto/foto-02-full.webp" alt="Muro coperto di muschio lungo un sentiero" data-en-alt="Moss-covered wall along a path" loading="lazy"></figure>
-      <figure class="ph" style="--c:#3E9A5B"><img src="img/foto/foto-03.webp" data-full="img/foto/foto-03-full.webp" alt="Tunnel in bianco e nero con scie di luce" data-en-alt="Black and white tunnel with light trails" loading="lazy"></figure>
-      <figure class="ph" style="--c:#E5B92B"><img src="img/foto/foto-04.webp" data-full="img/foto/foto-04-full.webp" alt="Case colorate sotto un cielo azzurro" data-en-alt="Colourful houses under a blue sky" loading="lazy"></figure>
-      <figure class="ph" style="--c:#C8352E"><img src="img/foto/foto-05.webp" data-full="img/foto/foto-05-full.webp" alt="Montagne all'ora blu" data-en-alt="Mountains at blue hour" loading="lazy"></figure>
+      <figure class="ph" style="--c:#17171C"><img src="img/foto/foto-01.webp" srcset="img/foto/foto-01-s.webp 640w, img/foto/foto-01.webp 1000w" sizes="(max-width: 600px) 50vw, 33vw" data-full="img/foto/foto-01-full.webp" alt="Funghi nel sottobosco" data-en-alt="Mushrooms on the forest floor" loading="lazy"></figure>
+      <figure class="ph" style="--c:#2E5BBA"><img src="img/foto/foto-02.webp" srcset="img/foto/foto-02-s.webp 640w, img/foto/foto-02.webp 1000w" sizes="(max-width: 600px) 50vw, 33vw" data-full="img/foto/foto-02-full.webp" alt="Muro coperto di muschio lungo un sentiero" data-en-alt="Moss-covered wall along a path" loading="lazy"></figure>
+      <figure class="ph" style="--c:#3E9A5B"><img src="img/foto/foto-03.webp" srcset="img/foto/foto-03-s.webp 640w, img/foto/foto-03.webp 1000w" sizes="(max-width: 600px) 50vw, 33vw" data-full="img/foto/foto-03-full.webp" alt="Tunnel in bianco e nero con scie di luce" data-en-alt="Black and white tunnel with light trails" loading="lazy"></figure>
+      <figure class="ph" style="--c:#E5B92B"><img src="img/foto/foto-04.webp" srcset="img/foto/foto-04-s.webp 640w, img/foto/foto-04.webp 1000w" sizes="(max-width: 600px) 50vw, 33vw" data-full="img/foto/foto-04-full.webp" alt="Case colorate sotto un cielo azzurro" data-en-alt="Colourful houses under a blue sky" loading="lazy"></figure>
+      <figure class="ph" style="--c:#C8352E"><img src="img/foto/foto-05.webp" srcset="img/foto/foto-05-s.webp 640w, img/foto/foto-05.webp 1000w" sizes="(max-width: 600px) 50vw, 33vw" data-full="img/foto/foto-05-full.webp" alt="Montagne all'ora blu" data-en-alt="Mountains at blue hour" loading="lazy"></figure>
       <a class="ph more" href="foto.html" data-cursor="Tutte le foto" data-cursor-en="All photos" style="--c:#7046A8">
-        <img src="img/foto/foto-06.webp" alt="" loading="lazy">
+        <img src="img/foto/foto-06.webp" srcset="img/foto/foto-06-s.webp 640w, img/foto/foto-06.webp 1000w" sizes="(max-width: 600px) 50vw, 33vw" alt="" loading="lazy">
         <span class="more-btn"><span data-en="See all photos">Vedi tutte le foto</span> <span aria-hidden="true">→</span></span>
       </a>
     </div>
@@ -203,7 +203,7 @@
   <section id="chi-sono" class="section about band band-tint">
     <h2 data-en="About">Chi sono</h2>
     <div class="about-short">
-      <img class="portrait" src="img/ritratto.webp" alt="Sebastyan Buryas" width="808" height="904">
+      <img class="portrait" src="img/ritratto.webp" alt="Sebastyan Buryas" width="808" height="904" loading="lazy" decoding="async">
       <div>
         <p class="scrub" data-en="Media artist from Turin, born in Ukraine. I design images, interfaces and installations, and I build them too, from the sketch to the code.">Media artist di Torino, nato in Ucraina. Progetto immagini, interfacce e installazioni, e le costruisco anche, dallo schizzo al codice.</p>
         <div class="about-buttons">
@@ -277,7 +277,7 @@
 
 <script src="script.js?v=13"></script>
 <script src="accent-ink.js?v=2"></script>
-<script src="menu.js?v=1"></script>
+<script src="menu.js?v=2"></script>
 <script src="lightbox.js?v=3" data-images=".ph:not(.more) img, .thumbs img"></script>
 <script src="lenis.min.js?v=1.1.13"></script>
 <script src="motion.js?v=2"></script>

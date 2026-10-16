@@ -3,7 +3,7 @@
   var head = document.querySelector('.nav');
   var nav = head && head.querySelector('nav');
   if (!nav) return;
-  var mq = window.matchMedia('(max-width: 760px)');
+  var mq = window.matchMedia('(max-width: 900px)');
   var btn = document.createElement('button');
   btn.type = 'button'; btn.className = 'burger';
   btn.setAttribute('aria-expanded', 'false');
