@@ -20,8 +20,9 @@
     if (el.closest('.zoomable, .ph img, .album img, .cw-media img, .lm img, .cd-gallery img, .ff-posts img')) return it() ? 'Apri' : 'Open';
     return '';
   }
-  // only the main, useful controls get the frame (calls to action, contact channels, language, players)
-  var CLICK = '.btn-big, .btn-cv, .btn-chroma, .copy-mail, .soc, .lang, .burger, .play-btn, .fl-play, .pp-btn, .wof-spin, .send-btn, .more-btn, .nav-in, .ch-filter button, [data-frame]';
+  // the frame goes on plain links (menu, text links, "back"), not on things that already look like buttons
+  var CLICK = '.nav nav a, .nav-name, .back, .links a, .cw-link a, .more-link, .title-link, .alt-link, .ff-actions a, main p a, main li > a, .foot a, [data-frame]';
+  var NOT = '.btn-big, .btn-cv, .btn-chroma, .copy-mail, .soc, .mail-btn, .lang, .burger, .play-btn, .fl-play, .pp-btn, .wof-spin, .send-btn, .more-btn, .nav-in, .ch-filter button, .ph, .cw-media, .cover-link';
   window.addEventListener('mousemove', function (e) {
     mx = e.clientX; my = e.clientY;
     if (!seen) { x = mx; y = my; seen = true; root.classList.add('cframe-on'); }
@@ -34,6 +35,7 @@
     var el = e.target; if (!(el instanceof Element)) return;
     label = labelFor(el);
     var hit = el.closest(CLICK);
+    if (hit && (hit.matches(NOT) || hit.closest(NOT))) hit = null;
     // big blocks (cards, images, the mail button) get a label, not a frame
     if (hit) { var b = hit.getBoundingClientRect(); if (b.width > 520 || b.height > 220) hit = null; }
     if (el.closest('input, textarea, [contenteditable]')) { hit = null; label = ''; ring.classList.add('is-text'); } else ring.classList.remove('is-text');
