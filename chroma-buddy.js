@@ -8,7 +8,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var b = document.createElement('div');
   b.className = 'buddy'; b.setAttribute('aria-hidden', 'true');
-  b.innerHTML = '<div class="buddy-body"><img src="img/chroma/chroma-omino.png" alt="" width="256" height="360"></div><span class="buddy-say"></span>';
+  b.innerHTML = '<div class="buddy-body"><img src="img/chroma/chroma-omino.webp" alt="" width="256" height="360"></div><span class="buddy-say"></span>';
   feature.appendChild(b);
   var body = b.querySelector('.buddy-body'), say = b.querySelector('.buddy-say');
   var lines = [

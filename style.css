@@ -668,3 +668,4 @@ a.btn-chroma, a.btn-chroma:hover { color: #EDEDEA; opacity: 1; } @media (hover: 
   .fx-vf-data .vf-lcd { flex-wrap: wrap; white-space: normal; gap: 2px 8px; font-size: 10.5px; padding: 0 4%; bottom: 6px; }
   .fx-vf-data .vf-top { top: 6px; }
 }
+html, body { overflow-x: clip; }
