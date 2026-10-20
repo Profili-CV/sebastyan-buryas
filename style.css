@@ -358,7 +358,7 @@ html.lenis, html.lenis body { height: auto; }
 .nav-mark .nav-logo { width: 22px; height: 32px; }
 .nav-mark:hover .nav-logo { background: var(--accent); }
 @media (max-width: 760px) { .nav-mark { top: 34px; } }
-@media (min-width: 761px) and (max-width: 1040px) { .nav-mark { display: none; } }
+@media (min-width: 761px) and (max-width: 1380px) { .nav-mark { display: none; } }
 
 /* Project videos open large */
 .vid-open { position: absolute; inset: 0; z-index: 2; border: 0; padding: 0; background: transparent; cursor: zoom-in; }
