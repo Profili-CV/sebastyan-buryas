@@ -1,7 +1,6 @@
 // Laboratorio: on desktop, hovering a row shows a live, scaled-down window of that site next to the pointer.
 (function () {
-  var rows = document.querySelectorAll('.lab-row[data-peek]');
-  if (!rows.length || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) { window.labPeek = function () {}; return; }
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var peek = document.createElement('div');
   peek.className = 'lab-peek'; peek.setAttribute('aria-hidden', 'true');
@@ -35,7 +34,8 @@
   }
   function kick() { if (!raf) raf = requestAnimationFrame(tick); }
 
-  rows.forEach(function (row) {
+  function bind(row) {
+    if (row.dataset.peekBound) return; row.dataset.peekBound = '1';
     function show(e) {
       var url = row.getAttribute('data-peek');
       active = row; tx = e.clientX; ty = e.clientY;
@@ -49,6 +49,9 @@
     row.addEventListener('pointerenter', show);
     row.addEventListener('pointermove', function (e) { if (active !== row) return show(e); tx = e.clientX; ty = e.clientY; kick(); });
     row.addEventListener('pointerleave', function () { active = null; peek.classList.remove('on'); });
-  });
+  }
+  // usata anche dopo lo sblocco, per le righe riservate che compaiono
+  window.labPeek = function (root) { (root || document).querySelectorAll('.lab-row[data-peek]').forEach(bind); };
+  window.labPeek();
   addEventListener('scroll', function () { if (active) { active = null; peek.classList.remove('on'); } }, { passive: true });
 })();
