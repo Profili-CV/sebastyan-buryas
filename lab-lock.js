@@ -42,7 +42,7 @@
     document.addEventListener('langchange', function () {
       opened.concat([done]).forEach(function (r) { r.querySelectorAll('[data-it]').forEach(function (el) { el.innerHTML = en() ? el.dataset.en : el.dataset.it; }); });
     });
-    if (window.labPeek) window.labPeek(document.getElementById('lab-index'));
+    if (window.labThumbs) window.labThumbs(document.getElementById('lab-index'));
   }
   function tryCode(code, quiet) {
     return open(code).then(function (rows) {
