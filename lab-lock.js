@@ -15,6 +15,14 @@
     });
   });
 
+  // richiesta di accesso: se l'app di posta non si apre, si può copiare l'indirizzo
+  var copy = box.querySelector('.lab-copy');
+  if (copy) copy.addEventListener('click', function () {
+    var mail = copy.dataset.mail, label = copy.querySelector('span');
+    var done = function () { label.textContent = en() ? 'Copied!' : 'Copiato!'; setTimeout(function () { label.textContent = en() ? 'Copy the address' : 'Copia l’indirizzo'; }, 2000); };
+    if (navigator.clipboard) navigator.clipboard.writeText(mail).then(done, done); else done();
+  });
+
   function open(code) {
     var enc = new TextEncoder();
     return crypto.subtle.importKey('raw', enc.encode(code), 'PBKDF2', false, ['deriveKey'])
